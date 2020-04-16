@@ -32,12 +32,28 @@ Chatbots for businesses in general wants to provide a user with answers to their
 \newpage
 \section{Intent Classification}
 Intent classification is one of the most widely used ways in which to train a chatbot. Intent classification is the practice of assigning the most likely class to a given input of text. In simpler tasks like deciding whether a movie review is positive or negative, we only have two classes. In more complex tasks like replacing human-operated customer service with a chatbot, we usually need a large collection of predefined task-specific classes. 
-
+\noindent
 After assigning a class, we then choose the appropriate response and return this to the user. \\\\ 
 
-Labelled vs unlabelled
-
+\noindent
 Machine learning is a natural way to train a chatbot for intent classification, as this is a classification problem.
 Kindly uses response selection for intent classification, which given an input, retrieves the most relevant response from a collection of samples. One of the benefits of using response selection is that we can train on a large unlabelled corpora of conversational data, which is easily accessible on the Internet.~\cite{Henderson-Task-Oriented}.\\
 First, we train a language model (LM). The goal of the LM is to try and comprehend what the customer is saying, by understanding the context in which it is said.
+
+\section{Pretraining}
+Pretraining languange models is one of the key components of neural language understanding. Historically we have pretrained a model for a single task. If we wanted to make a model that can predict whether a movie review is positive or negative, we would feed the model a large amount of labelled reviews so that it may learn the differences. The challenges this raised lies in how exactly this data should be stored in the model, and figuring out what to focus on when learning. In NLP there are a lot of ways to approach text processing. The most intuitive way might be to split the words by sentences (punctuations) and whitespaces (words) and have the model learn which words and sentences are the most recurring in the different reviews, disregarding universally common words like 'the'. In addition, n-grams have been used to try and get a deeper understanding of context. Instead of only looking at one word at a time, we look at the current word as well as the n previous words. This is just one of many techniques that can be applied to improve the model. Others include POS-tagging, NP chunking and Named Entity Recognition to mention some.\\\\
+\noindent
+There are however a couple of challenges when considering these different types of text processing for pretraining language model. A lot of text processing requires a large amount of manual labour beforehand. While splitting sentences and words in most cases are a trivial task for a program to solve, POS-tagging and NER are not. There is a fairly large amount of data that already have this, namely the Brown Corpus, but limiting language models to only learn from one source would be crippling in regards to making newer and better models. In addition, if we would feed all the additional information about every word and sentence to the model, the computational power required would be insurmountable.
+\\\\
+\noindent
+Solution:
+\\
+Word vectorization
+\\\\
+\noindent
+Pretraining word representations has become (one of the key components) of neural language understanding models in recent years. The main goal of pretraining word representations is to model complex characteristics of word use and how these uses vary across linguistic contexts.~\cite{https://www.aclweb.org/anthology/N18-1202.pdf}
+When we pretrain word representations, we usually do so on a large text corpus. 
+\section{Transfer Learning}
+Transfer learning is a means to exract knowledge from a source setting and apply it to a different target setting
+
 \end{document}
