@@ -9,28 +9,24 @@
 \setcounter{secnumdepth}{0}
 
 \section{Introduction}
-In this essay I will explain some of the main challenges of adversarial data augmentation for intent classification for chatbots.
+In this essay I will explain the challenges of cross-domain sentiment analysis and how we might use transfer learning to solve it.
+Sentiment analysis is the process of trying to understand the sentiment behind a statement or document using machine learning. This can, among other things, be used to get information from reviews that can provide useful information.
+There are many different ways to formulate a sentiment. A movie review might state "The movie is not bad at all.". If we simply look for words like "bad" and classify them as negative, we will get inaccurate results.
+
 % Chatbots today are largely based on retrieval-based dialogue systems, which I will explain in more detail later on. In short, retrieval-based dialogue systems uses intent classification to find the most likely response to a query, given a predefined set of possible classes. 
 %One of the main challenges is that the users of these chatbots rarely know exactly what query the chatbot is trained to understand.
-Intent classification is the process of trying to understand the intent behind a statement or document using machine learning. Chatbots use these intents to try and select the response that is most the most likely to correspond with the users query.
-There are many different ways to formulate an intent, and even among these we find other challenges like grammatical errors, slang and abbreviations. One of the most promising ways to combat these challenges is adversarial data augmentation. In short, we want to find a way to make the chatbots more robust against human error, by training the chatbots on data containing mistakes. There has been a lot of recent research on adversarial data augmentation as it's relevancy has grown considerably, but we have yet to find a good solution. In my thesis, I will look at different strategies for adversary generation and measure their effectiveness across neural architectures and chatbot domains, focusing primarily on the Norwegian language.
+
 \\\\  - Explain structure of essay - \\\\
-Kindly: What's relevant?, Background, Platform, How will our work benefit their goals?\\
-Chatbots: Dialogue Systems, Reading comprehension (SQUAD - Stanford Question Answering Dataset), Response selection \\
 Pretraining: BERT/ELMO, task specific\\
-Adverserial Learning: Data augmentation
+
 
 
 \newpage
 
-\section{Kindly}
-\subsection{Background}
-My thesis will be written in close cooperation with Kindly. Kindly is a language technology group based in Oslo. Kindly was founded in 2016 and has since grown to a team of over 40 employees, several of whom have graduated from the Language Technology Group (LTG) at the University of Oslo with master’s and doctoral degrees. Natural language processing and machine learning are at the core of the Kindly chatbot platform, which powers the conversational agents for some of the leading enterprises in the Nordics, such as Norwegian Air Shuttle, Elkjøp, Kahoot!, Thon Hotels, and Finn. Kindly aims to make an easy and accessible platform for businesses to create their own chatbots tailored to their needs.
-In my thesis I will rely heavily on research already made by Kindly, and I will make use of Kindly's existing platform for chatbots.
-\subsection{Kindly's chatbot platform}
-Chatbots for businesses in general wants to provide a user with answers to their questions, much like an agent working at customer service. For a given business there is normally not too many different questions that a customer can ask, but for each one of the questions there is a lot of different ways to formulate them. Also, humans are faulty, which may lead to grammatical errors and badly formulated questions that confuses the chatbot. The way Kindly's chatbot works is that for each intent (question), they have a collection of samples that triggers a reply. The collection of samples consist of different ways to formulate a certain question. Kindly also include a simple system for data augmentation that let's their users expand their samples by adding synonyms. If a customer wants to rent a room, they might use the word ''rent'', ''purchase'', ''buy'' and so on. By letting the users append all of these words to the collection of samples, the chatbot will treat the words as if they were identical to their given synonym.
+\section{LTG?}
+
 \newpage
-\section{Intent Classification}
+\section{Sentiment Analysis}
 Intent classification is one of the most widely used ways in which to train a chatbot. Intent classification is the practice of assigning the most likely class to a given input of text. In simpler tasks like deciding whether a movie review is positive or negative, we only have two classes. In more complex tasks like replacing human-operated customer service with a chatbot, we usually need a large collection of predefined task-specific classes. 
 \noindent
 After assigning a class, we then choose the appropriate response and return this to the user. \\\\ 

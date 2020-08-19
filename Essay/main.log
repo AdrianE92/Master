@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  16 APR 2020 13:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  19 AUG 2020 16:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -270,7 +270,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  2189 strings out of 480994
  35343 string characters out of 5916033
- 270888 words of memory out of 5000000
+ 270891 words of memory out of 5000000
  17664 multiletter control sequences out of 15000+600000
  546233 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
