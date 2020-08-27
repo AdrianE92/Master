@@ -1,0 +1,40 @@
+Fokusere på pretraining og transfer learning først
+Sebastian Ruder - Transfer Learning
+BERT, ELMO
+
+Multi-Purpose NLP Models:
+	- ULMFiT
+	- Transformer
+	- BERT
+	- Transformer-XL
+	- GPT-2
+Word Embeddings:
+	- ELMo
+	- Flair
+Other Pretrained Models:
+	- StanfordNLP
+
+ULMFiT - Universal Language Model Fine-Tuning (Jeremy Howard and Sebastian Ruder):
+Basically a lot of models and parameters put together with dropout everywhere
+
+
+
+
+
+
+
+labelled vs unlabeled
+We want labelled, but it's expensive
+Hence, we made methods for extraction from unlabeled
+
+Preivous work in intent classification
+
+
+Lage git repo
+Leseliste
+Bildebruk?
+Se på det Eman sendte
+
+https://arxiv.org/pdf/1807.10854.pdf
+https://paperswithcode.com/
+https://bura.brunel.ac.uk/bitstream/2438/14221/1/FullText.pdf
