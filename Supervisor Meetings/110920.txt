@@ -1,0 +1,32 @@
+Cross Domain:
+Test for differences between domains
+Document Level
+Systematically leave out domains to check the differences
+
+Training is gonna take a long time, need to start early
+Train one model on one domain at a time 
+Sequentially adding domains to see what happens
+Pretraining a model and then finetuning
+
+Essay:
+Include NoReC as a section
+https://www.duo.uio.no/handle/10852/62893
+
+SA  Discuss different data sets
+    What has been done for SA in Norwegian
+    Main focus on Document Level SA
+    Domain effects for SA
+    NoReC
+    List of basic refences (list from Jeremy for starters)
+    
+PT  https://www.aclweb.org/anthology/2020.acl-main.740.pdf
+    http://www.lrec-conf.org/proceedings/lrec2020/pdf/2020.lrec-1.607.pdf
+
+Start with Transfer Learning, explain that it takes on different shapes and sizes and move on to explain e.g pretraining
+
+TL:
+Self Supervised Learning
+
+Path Forward:
+
+Supervisors:
