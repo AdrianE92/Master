@@ -1,9 +1,35 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{}
 
-\bibitem{pang-etal-2002-thumbs}
-B.~Pang, L.~Lee, and S.~Vaithyanathan, ``Thumbs up? sentiment classification
-  using machine learning techniques,'' in {\em Proceedings of the 2002
-  Conference on Empirical Methods in Natural Language Processing ({EMNLP}
-  2002)}, pp.~79--86, Association for Computational Linguistics, July 2002.
+\bibitem[Devlin et~al., 2018]{DBLP:journals/corr/abs-1810-04805}
+Devlin, J., Chang, M., Lee, K., and Toutanova, K. (2018).
+\newblock {BERT:} pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock {\em CoRR}, abs/1810.04805.
+
+\bibitem[Pang et~al., 2002]{pang-etal-2002-thumbs}
+Pang, B., Lee, L., and Vaithyanathan, S. (2002).
+\newblock Thumbs up? sentiment classification using machine learning
+  techniques.
+\newblock In {\em Proceedings of the 2002 Conference on Empirical Methods in
+  Natural Language Processing ({EMNLP} 2002)}, pages 79--86. Association for
+  Computational Linguistics.
+
+\bibitem[Peters et~al., 2018]{Peters:2018}
+Peters, M.~E., Neumann, M., Iyyer, M., Gardner, M., Clark, C., Lee, K., and
+  Zettlemoyer, L. (2018).
+\newblock Deep contextualized word representations.
+\newblock In {\em Proc. of NAACL}.
+
+\bibitem[Taboada et~al., 2011]{taboada-etal-2011-lexicon}
+Taboada, M., Brooke, J., Tofiloski, M., Voll, K., and Stede, M. (2011).
+\newblock Lexicon-based methods for sentiment analysis.
+\newblock {\em Computational Linguistics}, 37(2):267--307.
+
+\bibitem[Velldal et~al., 2017]{11509/124}
+Velldal, E., {\O}vrelid, L., Bergem, E.~A., Stadsnes, C., Touileb, S., and
+  J{\o}rgensen, F. (2017).
+\newblock {NoReC}: The norwegian review corpus.
+\newblock Common Language Resources and Technology Infrastructure Norway
+  ({CLARINO}) Bergen Repository.
 
 \end{thebibliography}

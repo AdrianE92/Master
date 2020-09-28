@@ -30,3 +30,5 @@ Self Supervised Learning
 Path Forward:
 
 Supervisors:
+Erik
+Jeremy
