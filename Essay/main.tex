@@ -1,6 +1,9 @@
 \documentclass{report}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{duomasterforside}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \begin{document}
 \title{Master's Essay}
@@ -41,6 +44,49 @@ NoReC covers a range of different domains, including literature, movies, video g
 %Get more specific numbers
 %Transition into domain adaptation
 %Set up tables with counts etc
+
+\begin{figure}[h!]
+	\begin{subfigure}{.33\textwidth}
+	\centering
+	\includegraphics[width=1\linewidth]{img/dev_ratings}
+	\caption{development}
+	\label{fig:devratings}
+	\end{subfigure}%
+	\begin{subfigure}{.33\textwidth}	
+	\centering
+	\includegraphics[width=1\linewidth]{img/test_ratings}
+	\caption{test}
+	\label{fig:testratings}
+	\end{subfigure}%
+	\begin{subfigure}{.33\textwidth}
+	\centering
+	\includegraphics[width=1\linewidth]{img/train_ratings}
+	\caption{training}
+	\label{fig:trainratings}
+	\end{subfigure}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{subfigure}{.33\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{img/dev_lngs}
+		\caption{development}
+		\label{fig:devlngs}
+	\end{subfigure}%
+	\begin{subfigure}{.33\textwidth}	
+		\centering
+		\includegraphics[width=1\linewidth]{img/test_lngs}
+		\caption{test}
+		\label{fig:testlngs}
+	\end{subfigure}%
+	\begin{subfigure}{.33\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{img/train_lngs}
+		\caption{training}
+		\label{fig:trainlngs}
+	\end{subfigure}
+\end{figure}
+
 \noindent
 \section{Transfer Learning}
 Transfer learning is a means to exract knowledge from a source setting and apply it to a different target setting. For example, one could train a model to recognize dogs, and then apply the knowledge to a model trying to recognize wolves. In NLP this can be especially useful, because words often means the same in a given context. There are, however, a few different types of transfer learning. One is when you have labeled data in the source domain and adapt the knowledge to different domains, also known as domain adaptation. A different, more common approach, is training on a large amount of unlabeled data, before adapting the representations using self supervised learning.
