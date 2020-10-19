@@ -4,13 +4,15 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
-
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{3}
 \begin{document}
 \title{Master's Essay}
 \duoforside[author={Adrian Eriksen}, dept={Department of Informatics}, program={Language Technology}]
 
-\setcounter{secnumdepth}{0}
-
+\tableofcontents
+\newpage
+\chapter{Background}
 \section{Introduction}
 In this essay I will explain the challenges of cross-domain sentiment analysis and how we might use transfer learning to solve it.
 Sentiment analysis is the process of trying to understand the sentiment behind a statement or document using machine learning. This can, among other things, be used to get information from reviews that can provide useful information.
@@ -28,68 +30,57 @@ task specific\\
 
 
 \section{Sentiment Analysis}
-Sentiment analysis (SA) is the computational treatment of opinions, sentiments and subjectivity of texts. SA is also known by opinion mining and a few other terms, and has a variety of different applications. It can be used for labelling reviews of movies or books, opinion mining from sites like Twitter and determining whether a written text is casual, informative or friendly, like Grammarly.\\\\
-One of the original challenges with SA was that sentiment is rarely identifiable by keywords alone \cite{pang-etal-2002-thumbs}. When humans are presented with the task of selecting a set of key words to tell whether a movie review is positive or negative, our intuition often leads us towards words like "horrible", "boring" and "sucks" for negative reviews, and "excellent", "thrilling" and "amazing" for positive reviews. As it turns out, selecting words like these gives us a much lower accuracy than if we train a model on labelled reviews, letting the model figure out which words are important. One of the challenges that is raised by training on a specific domain (e.g movie reviews), is that it transfers poorly to other domains like restaurant reviews. In the movie review domain, some of the words that carries negative weight is words like "2", "series" and "tv", which makes sense in that specific domain (people tend to disfavor movies based on tv series, and sequels), but this is obviously not applicable while trying to predict whether a review of a restaurant is positive or negative \cite{taboada-etal-2011-lexicon}.
-%Mention different granularities word/sentence/intensities just mention variations
-%Talk about lexicon vs other methods
-%
-%Discuss different datasets
-%What has been done for SA in Norwegian?
+Sentiment analysis (SA) is the computational treatment of opinions, sentiments, and subjectivity of texts. SA is also known by opinion mining and a few other terms, and has a variety of different applications. It can be used for labeling reviews of movies or books, opinion mining from sites like Twitter, and determining whether a written text is casual, informative, or friendly, like Grammarly.\\\\
+As of today, there are two main approaches to SA, the lexicon-based approach and the machine learning approach. The lexicon-based approach uses a lexicon with words or multiword terms. These are usually tagged with sentiment (positive or negative) and sometimes with different intensities (very positive, slightly negative, etc). Given the word or multiword terms, you can further calculate the value of a sentence and then the entire document. One way to do this is by assigning each word a score with either positive or negative numbers, while taking negation into account. For example, "The movie was not excellent" should yield a higher score than "The movie was not good", as a strongly polarized word usually reflects a somewhat mixed opinion \cite{taboada-etal-2011-lexicon}. One of the benefits of lexicon-based SA is that you don't have any need for labeled data, as the lexicon is pre-defined, and that you get some robustness when applying it on different domains if the lexicon is well made. Lexicon-based SA is mostly used on a document-level or sentence-level. Document-level SA is the task of classifying the sentiment of a document. The document in this context will be considered as one piece of information, and the score this document recieves is determined by the overall sentiment of the author. By applying SA to a number of different documents regarding the same topic, we get a score based on the total number of positive and negative documents.\\
+Sentence-level SA looks at each sentence as positive, negative or neutral, sometimes with different intensities. When looking at the sentences in a document, there are different levels of subjectivity that can be observed. Some sentences will only state a fact like "The restaurant serves Italian food", while others contain subjective opinions like "The restaurant closes too early". The subjectivity of sentences can affect the intensity, as a sentence based on an opinion or a certain belief, usually indicates a stronger intensity than stating a fact.\\
+A 
+The machine learning approach could either involve creating a model from a labeled training dataset and then applying it to the target data, or use a premade model and fine-tuning it on the target data. Both of the aforementioned machine learning approaches use supervised learning, where you train an algorithm on a large number of graded reviews and then have it predict the grade given to unseen reviews. One could also do a hybrid between the two, where you first train an algorithm on labeled data, before comparing the results with a lexicon to improve accuracy.
+One of the original challenges with SA was that sentiment is rarely identifiable by keywords alone \cite{pang-etal-2002-thumbs}. When humans are presented with the task of selecting a set of keywords to tell whether a movie review is positive or negative, our intuition often leads us towards words like "horrible", "boring" and "sucks" for negative reviews, and "excellent", "thrilling" and "amazing" for positive reviews. As it turns out, selecting words like these gives us a much lower accuracy than if we train a model on labeled reviews, letting the model figure out which words are important. This, however, raises a challenge when it comes to domains. If we train a model on a specific domain (e.g movie reviews), it transfers poorly to other domains like restaurant reviews. In the movie review domain, some of the words that carries negative weight is words like "2", "series" and "tv", which makes sense in that specific domain (people tend to disfavor movies based on tv series, and sequels), but this is not applicable while trying to predict whether a review of a restaurant is positive or negative. 
+
 %Domain effects for SA
+
+%Discuss different datasets, mention examples of commonly used datasets, Standford sentiment bank, IMDB, Twitter
+%What has been done for SA in Norwegian?
+
+%Mention different granularities word/sentence/intensities just mention variations (include that it can be used on different levels, SA for a single sentence for example)
+
+%Talk about lexicon vs other methods
+
 %NoReC
+%In contrast it's a multidomain dataset
 
 \section{NoReC}
 The Norwegian Review Corpus (NoReC) is a dataset containing more than 35,000 full-text reviews from Norwegian news sources \cite{11509/124}.\\
-NoReC covers a range of different domains, including literature, movies, video games, restaurants, music and theater, in addition to product reviews across a range of categories. Each review is labelled with a score ranging from 1-6, provided by the author of the review. NoReC was primarily created for training and evaluating models for document-level sentiment analysis, which makes it ideal for testing differences between domains on a document-level.
+NoReC covers a range of different domains, including literature, movies, video games, restaurants, music, and theater, in addition to product reviews across a range of categories. Each review is labeled with a score ranging from 1-6, provided by the author of the review. NoReC was primarily created for training and evaluating models for document-level sentiment analysis, which makes it ideal for testing differences between domains on a document-level. The dataset has a good spread between scores, with 3, 4, and 5 being the most frequent. This makes sense, as it usually takes something particularly bad to give a score of 1 or 2, or something extraordinary to give a score of 6. Figure \ref{fig:trainratings}, \ref{fig:devratings} and \ref{fig:testratings} shows a distribution of the data through the training set, development set and test set. As we can see from the plots, the proportions of the scores are relatively equal in all three, which is important when developing a model. 
+%Distribution of domains
 %Get more specific numbers
 %Transition into domain adaptation
 %Set up tables with counts etc
-
+%Get more statistics
 \begin{figure}[h!]
-	\begin{subfigure}{.33\textwidth}
 	\centering
-	\includegraphics[width=1\linewidth]{img/dev_ratings}
-	\caption{development}
-	\label{fig:devratings}
-	\end{subfigure}%
-	\begin{subfigure}{.33\textwidth}	
-	\centering
-	\includegraphics[width=1\linewidth]{img/test_ratings}
-	\caption{test}
-	\label{fig:testratings}
-	\end{subfigure}%
-	\begin{subfigure}{.33\textwidth}
-	\centering
-	\includegraphics[width=1\linewidth]{img/train_ratings}
+	\includegraphics[scale=0.5]{img/train_ratings}
 	\caption{training}
 	\label{fig:trainratings}
-	\end{subfigure}
-\end{figure}
-
+\end{figure}%
 \begin{figure}[h!]
-	\begin{subfigure}{.33\textwidth}
 		\centering
-		\includegraphics[width=1\linewidth]{img/dev_lngs}
+		\includegraphics[scale=0.5]{img/dev_ratings}
 		\caption{development}
-		\label{fig:devlngs}
-	\end{subfigure}%
-	\begin{subfigure}{.33\textwidth}	
+		\label{fig:devratings}
+	\end{figure}%
+\begin{figure}[h!]
 		\centering
-		\includegraphics[width=1\linewidth]{img/test_lngs}
+		\includegraphics[scale=0.5]{img/test_ratings}
 		\caption{test}
-		\label{fig:testlngs}
-	\end{subfigure}%
-	\begin{subfigure}{.33\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{img/train_lngs}
-		\caption{training}
-		\label{fig:trainlngs}
-	\end{subfigure}
-\end{figure}
+		\label{fig:testratings}
+\end{figure}%
 
-\noindent
+
+
+
 \section{Transfer Learning}
-Transfer learning is a means to exract knowledge from a source setting and apply it to a different target setting. For example, one could train a model to recognize dogs, and then apply the knowledge to a model trying to recognize wolves. In NLP this can be especially useful, because words often means the same in a given context. There are, however, a few different types of transfer learning. One is when you have labeled data in the source domain and adapt the knowledge to different domains, also known as domain adaptation. A different, more common approach, is training on a large amount of unlabeled data, before adapting the representations using self supervised learning.
+Transfer learning is a means to extract knowledge from a source setting and apply it to a different target setting. For example, one could train a model to recognize dogs, and then apply the knowledge to a model trying to recognize wolves. In NLP this can be especially useful because words often mean the same in a given context. There are, however, a few different types of transfer learning. One is when you have labeled data in the source domain and adapt the knowledge to different domains, also known as domain adaptation. A different, more common approach, is training on a large amount of unlabeled data, before adapting the representations using self-supervised learning.
 
 %\section{Preprocessing}
 %Pretraining languange models is one of the key components of natural language processing. Historically we have pretrained a model for a single task. If we wanted to make a model that can predict whether a movie review is positive or negative, we would feed the model a large amount of labelled reviews so that it may learn the differences. The challenges this raises lies in how exactly this data should be stored in the model, and figuring out what to focus on when learning. In NLP there are a lot of ways to approach text processing. The most intuitive way might be to split the words by sentences (punctuations) and whitespaces (words) and have the model learn which words and sentences are the most recurring in the different reviews, disregarding universally common words like 'the'. In addition, n-grams have been used to try and get a deeper understanding of context. Instead of only looking at one word at a time, we look at the current word as well as the n previous words. This is just one of many techniques that can be applied to improve the model. Others include POS-tagging, NP chunking and Named Entity Recognition to mention some.\\\\
@@ -98,15 +89,24 @@ Transfer learning is a means to exract knowledge from a source setting and apply
 
 \section{Pretraining}
 \noindent
-The large amount of information that each word could contain, turned out to be solvable by vectorization (embedding). It was discovered that by mapping each word to a vector, we could keep a lot of it's properties without having to process all of it's information. By looking at which words appeared in the same context, we could place synonyms close to eachother in the vector space. If we take the example of the words "king" and "queen", they would be placed close to eachother in the vector space, along with words like "royalty" and "palace". However, "queen" would be closer to "female", while "king" would be closer to "male". One of the main problems remained, however. Training the embeddings on a large dataset is still very expensive in both time, energy and resources.
+%Talk about word embeddings and vectors as examples, but don't explain them
+The large amount of information that each word could contain, turned out to be solvable by vectorization (embedding). It was discovered that by mapping each word to a vector, we could keep a lot of its properties without having to process all of its information. By looking at which words appeared in the same context, we could place synonyms close to each other in the vector space. If we take the example of the words "king" and "queen", they would be placed close to each other in the vector space, along with words like "royalty" and "palace". However, "queen" would be closer to "female", while "king" would be closer to "male". One of the main problems remained, however. Training the embeddings on a large dataset is still very expensive in both time, energy, and resources.
 \noindent
-\subsection{Vectorization}
-ELMo - Embeddings from Language Models was the next step in the evolution of word vectorization \cite{Peters:2018}. Where we previously assigned a vector to each word, ELMo looks at the context the word appears in. If we take the word "fall", this could have multiple meanings. One being the verb "to fall", another being the time of year as in "autumn". With traditional embeddings, we would learn the vectors based on a dataset and assign only one vector to "fall". One of the revolutionary things that ELMo did, is that each token is assigned a representation that is a function of the entire input sentence. In other words, the embedding assigned to "fall" is calculated from the sentence it appears in. The way ELMo does this, is by using a bidirectional long short-term memory (BiLSTM) RNN to calculate the probability of both previous and future words in the sentence, before returning the contextualized embedding.
+%can have sections for contextualized, static, etc
+%contextualized embeddings - computing vectors in context instead of fixed
+%can also be trained from scartch, but they are more commonly pretrained
+%can be fine-tuned or used as is
+\subsection{Contextualized Embeddings}
+ELMo - Embeddings from Language Models was the next step in the evolution of word vectorization \cite{Peters:2018}. Where we previously assigned a vector to each word, ELMo looks at the context the word appears in. If we take the word "fall", this could have multiple meanings. One being the verb "to fall", another being the time of year as in "autumn". With traditional embeddings, we would learn the vectors based on a dataset and assign only one vector to "fall". One of the revolutionary things that ELMo did, is that each token is assigned a representation that is a function of the entire input sentence. In other words, the embedding assigned to "fall" is calculated from the sentence it appears in. The way ELMo does this is by using a bidirectional long short-term memory (BiLSTM) RNN to calculate the probability of both previous and future words in the sentence, before returning the contextualized embedding.
 
 \subsection{Finetuning}
-BERT - Bidirectional Encoder Representations from Transformers is probably the most influential invention in NLP in recent years \cite{DBLP:journals/corr/abs-1810-04805}. Upon it's release in 2018, it obtained state-of-the-art results on eleven NLP tasks in a variety of fields. Whereas previous language representation models like OpenAI GPT had been unidirectional, BERT uses attention mechanisms to learn the contextual relations between words. The way BERT does this is by using a "masked language model" (MLM) pre-training objective. First, the model replaces some of the words in the dataset with the [MASK] token, then the model attempts to predict the actual value of the token, based on the context provided by the unmasked words in the sentence. Next, the model does "next sentence prediction" (NSP). By pairing 50\% of the sentences in the dataset, BERT is tasked with predicting whether the next sentence in a document is actually the next sentence, with a 50\% chance it will be. This has proven very useful for tasks like question answering, where models are required to produce fine-grained output at the token level. Upon the release of the paper Google also released the models used in the paper, BERT$_{BASE}$ and BERT$_{LARGE}$. These are both increadibly large models with 110M and 340M parameters respectively. Training a model of this size requires an enormous amount of computational power, energy and time. By making both the code and pre-trained models from the paper publicly available, it became possible for small research groups with limited computational power and funding, to fine-tune BERT and apply it as they saw fit.
+BERT - Bidirectional Encoder Representations from Transformers is probably the most influential invention in NLP in recent years \cite{DBLP:journals/corr/abs-1810-04805}. Upon its release in 2018, it obtained state-of-the-art results on eleven NLP tasks in a variety of fields. Whereas previous language representation models like OpenAI GPT had been unidirectional, BERT uses attention mechanisms to learn the contextual relations between words. The way BERT does this is by using a "masked language model" (MLM) pre-training objective. First, the model replaces some of the words in the dataset with the [MASK] token, then the model attempts to predict the actual value of the token, based on the context provided by the unmasked words in the sentence. Next, the model does "next sentence prediction" (NSP). By pairing 50\% of the sentences in the dataset, BERT is tasked with predicting whether the next sentence in a document is the next sentence, with a 50\% chance it will be. This has proven very useful for tasks like question answering, where models are required to produce fine-grained output at the token level. Upon the release of the paper, Google also released the models used in the paper, BERT$_{BASE}$ and BERT$_{LARGE}$. These are both incredibly large models with 110M and 340M parameters respectively. Training a model of this size requires an enormous amount of computational power, energy, and time. By making both the code and pre-trained models from the paper publicly available, it became possible for small research groups with limited computational power and funding, to fine-tune BERT and apply it as they saw fit.
 %Pretraining word representations has become (one of the key components) of neural language understanding models in recent years. The main goal of pretraining word representations is to model complex characteristics of word use and how these uses vary across linguistic contexts.~\cite{https://www.aclweb.org/anthology/N18-1202.pdf}
 %When we pretrain word representations, we usually do so on a large text corpus. 
+
+
+%pretraining is one instance of transfer
+%domain adaptation is one instance of transfer
 \section{Domain Adaptation}
 Domain Adaptation is the part of transfer learning where you want to apply the model trained during the pretraining to a target domain.
 \subsection{Domain Adaptation for Sentiment Analysis}
