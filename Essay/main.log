@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  15 OCT 2020 11:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  19 OCT 2020 16:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -239,37 +239,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--39
 
  []
 
-[3]
-<img/train_ratings.png, id=34, 462.528pt x 346.896pt>
+[3] [4]
+<img/train_ratings.png, id=37, 462.528pt x 346.896pt>
 File: img/train_ratings.png Graphic file (type png)
 <use img/train_ratings.png>
-Package pdftex.def Info: img/train_ratings.png  used on input line 62.
+Package pdftex.def Info: img/train_ratings.png  used on input line 72.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<img/dev_ratings.png, id=35, 462.528pt x 346.896pt>
+<img/dev_ratings.png, id=38, 462.528pt x 346.896pt>
 File: img/dev_ratings.png Graphic file (type png)
 <use img/dev_ratings.png>
-Package pdftex.def Info: img/dev_ratings.png  used on input line 68.
+Package pdftex.def Info: img/dev_ratings.png  used on input line 78.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<img/test_ratings.png, id=36, 462.528pt x 346.896pt>
+<img/test_ratings.png, id=39, 462.528pt x 346.896pt>
 File: img/test_ratings.png Graphic file (type png)
 <use img/test_ratings.png>
-Package pdftex.def Info: img/test_ratings.png  used on input line 74.
+Package pdftex.def Info: img/test_ratings.png  used on input line 84.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[4 <./img/train_ratings.png>] [5 <./img/dev_ratings.png> <./img/test_ratings.pn
-g>] [6] [7] (./main.bbl) [8
+ [5 <./img/train_ratings.png>] [6 <./img/dev_ratings.png> <./img/test_ratings.p
+ng>] [7] [8] (./main.bbl) [9
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  2928 strings out of 480994
  49199 string characters out of 5916033
- 284609 words of memory out of 5000000
+ 286609 words of memory out of 5000000
  18415 multiletter control sequences out of 15000+600000
  547791 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -283,10 +276,10 @@ ic/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
 10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:
 /texlive/2019/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (12 pages, 173136 bytes).
+Output written on main.pdf (13 pages, 176945 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 90 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
