@@ -3,12 +3,13 @@
 \contentsline {section}{\numberline {1.2}Sentiment Analysis}{3}%
 \contentsline {section}{\numberline {1.3}Datasets}{4}%
 \contentsline {subsection}{Stanford Sentiment Treebank}{4}%
-\contentsline {subsection}{IMDb Movie Review Dataset}{4}%
+\contentsline {subsection}{IMDb Movie Review Dataset}{5}%
 \contentsline {subsection}{Amazon Review Data}{5}%
+\contentsline {subsection}{Twitter}{5}%
 \contentsline {section}{\numberline {1.4}NoReC}{5}%
 \contentsline {section}{\numberline {1.5}Transfer Learning}{6}%
 \contentsline {section}{\numberline {1.6}Pretraining}{7}%
-\contentsline {subsection}{Contextualized Embeddings}{7}%
-\contentsline {subsection}{Finetuning}{7}%
-\contentsline {section}{\numberline {1.7}Domain Adaptation}{8}%
-\contentsline {subsection}{Domain Adaptation for Sentiment Analysis}{8}%
+\contentsline {subsection}{Contextualized Embeddings}{8}%
+\contentsline {subsection}{Finetuning}{9}%
+\contentsline {section}{\numberline {1.7}Domain Adaptation}{9}%
+\contentsline {subsection}{Domain Adaptation for Sentiment Analysis}{9}%

@@ -6,6 +6,29 @@ Devlin, J., Chang, M., Lee, K., and Toutanova, K. (2018).
   understanding.
 \newblock {\em CoRR}, abs/1810.04805.
 
+\bibitem[Maas et~al., 2011]{maas-EtAl:2011:ACL-HLT2011}
+Maas, A.~L., Daly, R.~E., Pham, P.~T., Huang, D., Ng, A.~Y., and Potts, C.
+  (2011).
+\newblock Learning word vectors for sentiment analysis.
+\newblock In {\em Proceedings of the 49th Annual Meeting of the Association for
+  Computational Linguistics: Human Language Technologies}, pages 142--150,
+  Portland, Oregon, USA. Association for Computational Linguistics.
+
+\bibitem[Ni et~al., 2019]{ni2019justifying}
+Ni, J., Li, J., and McAuley, J. (2019).
+\newblock Justifying recommendations using distantly-labeled reviews and
+  fine-grained aspects.
+\newblock In {\em Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing and the 9th International Joint Conference on
+  Natural Language Processing (EMNLP-IJCNLP)}, pages 188--197.
+
+\bibitem[Pak and Paroubek, 2010]{pak-paroubek-2010-twitter}
+Pak, A. and Paroubek, P. (2010).
+\newblock {T}witter as a corpus for sentiment analysis and opinion mining.
+\newblock In {\em Proceedings of the Seventh International Conference on
+  Language Resources and Evaluation ({LREC}'10)}, Valletta, Malta. European
+  Language Resources Association (ELRA).
+
 \bibitem[Pang et~al., 2002]{pang-etal-2002-thumbs}
 Pang, B., Lee, L., and Vaithyanathan, S. (2002).
 \newblock Thumbs up? sentiment classification using machine learning
@@ -19,6 +42,14 @@ Peters, M.~E., Neumann, M., Iyyer, M., Gardner, M., Clark, C., Lee, K., and
   Zettlemoyer, L. (2018).
 \newblock Deep contextualized word representations.
 \newblock In {\em Proc. of NAACL}.
+
+\bibitem[Socher et~al., 2013]{socher2013recursive}
+Socher, R., Perelygin, A., Wu, J., Chuang, J., Manning, C.~D., Ng, A.~Y., and
+  Potts, C. (2013).
+\newblock Recursive deep models for semantic compositionality over a sentiment
+  treebank.
+\newblock In {\em Proceedings of the 2013 conference on empirical methods in
+  natural language processing}, pages 1631--1642.
 
 \bibitem[Taboada et~al., 2011]{taboada-etal-2011-lexicon}
 Taboada, M., Brooke, J., Tofiloski, M., Voll, K., and Stede, M. (2011).
