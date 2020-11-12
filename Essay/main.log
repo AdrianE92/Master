@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  21 OCT 2020 20:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  12 NOV 2020 18:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -119,40 +119,161 @@ Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
 \c@subfigure=\count183
 \c@subtable=\count184
 )
+(c:/texlive/2019/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+
+(c:/texlive/2019/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(c:/texlive/2019/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+)
+(c:/texlive/2019/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2019/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(c:/texlive/2019/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(c:/texlive/2019/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(c:/texlive/2019/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(c:/texlive/2019/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(c:/texlive/2019/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(c:/texlive/2019/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(c:/texlive/2019/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen146
+\Hy@linkcounter=\count185
+\Hy@pagecounter=\count186
+
+(c:/texlive/2019/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(c:/texlive/2019/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(c:/texlive/2019/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count187
+\pdfmajorversion=\count188
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count189
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen147
+
+(c:/texlive/2019/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(c:/texlive/2019/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count190
+\Field@Width=\dimen148
+\Fld@charsize=\dimen149
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+
+(c:/texlive/2019/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count191
+\c@Item=\count192
+\c@Hfootnote=\count193
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(c:/texlive/2019/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+
+(c:/texlive/2019/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
+\Fld@listcount=\count194
+\c@bookmark@seq@number=\count195
+
+(c:/texlive/2019/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(c:/texlive/2019/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip52
+)
 (c:/texlive/2019/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count185
+\l__kernel_color_stack_int=\count196
 \l__pdf_internal_box=\box45
 )
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
  (c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count186
-\scratchdimen=\dimen146
+\scratchcounter=\count197
+\scratchdimen=\dimen150
 \scratchbox=\box46
-\nofMPsegments=\count187
-\nofMParguments=\count188
+\nofMPsegments=\count198
+\nofMParguments=\count199
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count189
-\MPscratchDim=\dimen147
-\MPnumerator=\count190
-\makeMPintoPDFobject=\count191
+\MPscratchCnt=\count266
+\MPscratchDim=\dimen151
+\MPnumerator=\count267
+\makeMPintoPDFobject=\count268
 \everyMPtoPDFconversion=\toks19
 ) (c:/texlive/2019/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -164,13 +285,35 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 11
+\AtBeginShipoutBox=\box47
+Package hyperref Info: Link coloring OFF on input line 10.
+
+(c:/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+(c:/texlive/2019/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(c:/texlive/2019/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count269
+)
+LaTeX Info: Redefining \ref on input line 10.
+LaTeX Info: Redefining \pageref on input line 10.
+LaTeX Info: Redefining \nameref on input line 10.
+
+(./main.out) (./main.out)
+\@outlinefile=\write3
+\openout3 = `main.out'.
+
+Package hyperref Info: Option `pageanchor' set `false' on input line 12.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 12
 .
-
-(c:/texlive/2019/texmf-dist/tex/latex/psnfss/t1phv.fd
+ (c:/texlive/2019/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
-
 
 LaTeX Warning: Font shape declaration has incorrect series value `mc'.
                It should not contain an `m'! Please correct it.
@@ -192,10 +335,10 @@ LaTeX Warning: Font shape declaration has incorrect series value `mc'.
                Found on input line 46.
 
 )
-<DUO_UiO_segl.png, id=1, 142.3719pt x 142.3719pt>
+<DUO_UiO_segl.png, id=64, 142.3719pt x 142.3719pt>
 File: DUO_UiO_segl.png Graphic file (type png)
 <use DUO_UiO_segl.png>
-Package pdftex.def Info: DUO_UiO_segl.png  used on input line 11.
+Package pdftex.def Info: DUO_UiO_segl.png  used on input line 12.
 (pdftex.def)             Requested size: 170.71652pt x 170.73027pt.
  [1
 
@@ -204,112 +347,174 @@ png>] [1]
 
 LaTeX Warning: No \author given.
 
-[1] [1] (./main.toc)
-\tf@toc=\write3
-\openout3 = `main.toc'.
+[1] [1]
+Package hyperref Info: Option `pageanchor' set `true' on input line 12.
+ (./main.toc)
+\tf@toc=\write4
+\openout4 = `main.toc'.
 
  [1
 
 ]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--26
+Underfull \hbox (badness 10000) in paragraph at lines 18--27
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--26
+Underfull \hbox (badness 10000) in paragraph at lines 18--27
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--26
+Underfull \hbox (badness 10000) in paragraph at lines 18--27
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--26
+Underfull \hbox (badness 10000) in paragraph at lines 18--27
 
  []
 
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 33--41
+Underfull \hbox (badness 10000) in paragraph at lines 34--44
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--41
+Underfull \hbox (badness 10000) in paragraph at lines 34--44
 
  []
 
-[3] [4] [5]
-<img/ratings.png, id=40, 462.528pt x 346.896pt>
+
+Overfull \hbox (12.88959pt too wide) in paragraph at lines 34--44
+\OT1/cmr/m/n/10 meth-ods [[]], vec-tor-iza-tion [[], [],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--44
+
+ []
+
+[3] [4]
+<img/ratings.png, id=152, 462.528pt x 346.896pt>
 File: img/ratings.png Graphic file (type png)
 <use img/ratings.png>
-Package pdftex.def Info: img/ratings.png  used on input line 79.
+Package pdftex.def Info: img/ratings.png  used on input line 82.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<img/cat_dist.png, id=41, 703.9098pt x 346.896pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/cat_dist.png, id=153, 703.9098pt x 346.896pt>
 File: img/cat_dist.png Graphic file (type png)
 <use img/cat_dist.png>
-Package pdftex.def Info: img/cat_dist.png  used on input line 85.
+Package pdftex.def Info: img/cat_dist.png  used on input line 88.
 (pdftex.def)             Requested size: 351.95404pt x 173.44757pt.
 
-Overfull \hbox (6.95404pt too wide) in paragraph at lines 85--86
+Overfull \hbox (6.95404pt too wide) in paragraph at lines 88--89
  [][] 
  []
 
-<img/screen_categories.png, id=42, 462.528pt x 346.896pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/screen_categories.png, id=154, 462.528pt x 346.896pt>
 File: img/screen_categories.png Graphic file (type png)
 <use img/screen_categories.png>
-Package pdftex.def Info: img/screen_categories.png  used on input line 91.
+Package pdftex.def Info: img/screen_categories.png  used on input line 94.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/music_categories.png, id=43, 462.528pt x 346.896pt>
+<img/music_categories.png, id=155, 462.528pt x 346.896pt>
 File: img/music_categories.png Graphic file (type png)
 <use img/music_categories.png>
-Package pdftex.def Info: img/music_categories.png  used on input line 97.
+Package pdftex.def Info: img/music_categories.png  used on input line 100.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/src_dist.png, id=44, 562.2606pt x 346.896pt>
+<img/src_dist.png, id=156, 562.2606pt x 346.896pt>
 File: img/src_dist.png Graphic file (type png)
 <use img/src_dist.png>
-Package pdftex.def Info: img/src_dist.png  used on input line 103.
+Package pdftex.def Info: img/src_dist.png  used on input line 106.
 (pdftex.def)             Requested size: 281.12961pt x 173.44757pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6 <./img/ratings.png> <./img/cat_dist.png>] [7 <./img/screen_categories.png> <
-./img/music_categories.png>] [8 <./img/src_dist.png>] [9] (./main.bbl [10
+[5] [6 <./img/ratings.png> <./img/cat_dist.png>]
+<img/tl_taxonomy.png, id=178, 2007.5pt x 1664.2175pt>
+File: img/tl_taxonomy.png Graphic file (type png)
+<use img/tl_taxonomy.png>
+Package pdftex.def Info: img/tl_taxonomy.png  used on input line 121.
+(pdftex.def)             Requested size: 260.98416pt x 216.35587pt.
+ [7 <./img/screen_categories.png> <./img/music_categories.png>]
 
-])
-[11] (./main.aux) ) 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8 <./img/src_dist.png>]
+Overfull \hbox (15.04233pt too wide) in paragraph at lines 135--136
+\OT1/cmr/m/n/10 Static word em-bed-dings had a break-through when Google pub-li
+shed their Word2Vec
+ []
+
+
+Overfull \hbox (33.75073pt too wide) in paragraph at lines 142--144
+\OT1/cmr/m/n/10 In 2018, Em-bed-dings from Lan-guage Mod-els (ELMo) was pub-lis
+hed [[]].
+ []
+
+[9 <./img/tl_taxonomy.png>] [10] (./main.bbl [11
+
+]
+Underfull \hbox (badness 2538) in paragraph at lines 80--82
+[]\OT1/cmr/m/n/10 Radford, A., Narasimhan, K., Sal-i-mans, T., and
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 161.
+ [12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 161.
+ (./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 161.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 161.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 8B4D50143ADD0BFD9DE6C07D7E1B7996;929
+(rerunfilecheck)             After:  28F92DAC014AE144B5302604C9294756;928.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 161.
+ ) 
 Here is how much of TeX's memory you used:
- 2950 strings out of 480994
- 49615 string characters out of 5916033
- 285609 words of memory out of 5000000
- 18435 multiletter control sequences out of 15000+600000
+ 6934 strings out of 480994
+ 112418 string characters out of 5916033
+ 371709 words of memory out of 5000000
+ 22265 multiletter control sequences out of 15000+600000
  547791 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,42p,1689b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-supe
-r-ts1.enc}{c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2
-019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmti10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mtt10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-<c:/texlive/2019/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (15 pages, 210279 bytes).
+ 41i,7n,42p,1808b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{c:/tex
+live/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2019/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi7.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2019
+/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2019/texmf-dis
+t/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on main.pdf (16 pages, 514217 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 272 PDF objects out of 1000 (max. 8388607)
+ 227 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
