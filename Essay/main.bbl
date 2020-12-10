@@ -7,6 +7,13 @@ Brun, C., Perez, J., and Roux, C. (2016).
 \newblock In {\em Proceedings of the 10th international workshop on semantic
   evaluation (SemEval-2016)}, pages 277--281.
 
+\bibitem[Daum{\'e}~III, 2007]{daume-iii-2007-frustratingly}
+Daum{\'e}~III, H. (2007).
+\newblock Frustratingly easy domain adaptation.
+\newblock In {\em Proceedings of the 45th Annual Meeting of the Association of
+  Computational Linguistics}, pages 256--263, Prague, Czech Republic.
+  Association for Computational Linguistics.
+
 \bibitem[Devlin et~al., 2018]{DBLP:journals/corr/abs-1810-04805}
 Devlin, J., Chang, M., Lee, K., and Toutanova, K. (2018).
 \newblock {BERT:} pre-training of deep bidirectional transformers for language
@@ -118,5 +125,9 @@ Zhang, L., Ghosh, R., Dekhil, M., Hsu, M., and Liu, B. (2011).
 \newblock Combining lexicon-based and learning-based methods for twitter
   sentiment analysis.
 \newblock {\em HP Laboratories, Technical Report HPL-2011}, 89.
+
+\bibitem[Zhang et~al., 2016]{zhang2016characterlevel}
+Zhang, X., Zhao, J., and LeCun, Y. (2016).
+\newblock Character-level convolutional networks for text classification.
 
 \end{thebibliography}
