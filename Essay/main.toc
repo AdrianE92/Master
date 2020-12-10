@@ -9,7 +9,7 @@
 \contentsline {subsection}{NoReC}{5}{section*.6}%
 \contentsline {section}{\numberline {1.4}Domain Adaptation}{6}{section.1.4}%
 \contentsline {subsection}{Transfer Learning}{8}{section*.12}%
-\contentsline {subsection}{Pre-Training}{8}{section*.14}%
+\contentsline {subsection}{Pre-Training}{9}{section*.14}%
 \contentsline {subsection}{Static Embeddings}{9}{section*.15}%
-\contentsline {subsection}{Contextualized Embeddings}{9}{section*.16}%
+\contentsline {subsection}{Contextualized Embeddings}{10}{section*.16}%
 \contentsline {subsection}{Fine-tuning}{10}{section*.17}%

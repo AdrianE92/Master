@@ -13,6 +13,13 @@ Devlin, J., Chang, M., Lee, K., and Toutanova, K. (2018).
   understanding.
 \newblock {\em CoRR}, abs/1810.04805.
 
+\bibitem[Howard and Ruder, 2018]{howard-ruder-2018-universal}
+Howard, J. and Ruder, S. (2018).
+\newblock Universal language model fine-tuning for text classification.
+\newblock In {\em Proceedings of the 56th Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pages 328--339,
+  Melbourne, Australia. Association for Computational Linguistics.
+
 \bibitem[Maas et~al., 2011]{maas-EtAl:2011:ACL-HLT2011}
 Maas, A.~L., Daly, R.~E., Pham, P.~T., Huang, D., Ng, A.~Y., and Potts, C.
   (2011).

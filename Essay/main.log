@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  20 NOV 2020 14:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.4.3)  1 DEC 2020 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -398,7 +398,7 @@ Overfull \hbox (12.88959pt too wide) in paragraph at lines 34--43
 <img/ratings.png, id=152, 462.528pt x 346.896pt>
 File: img/ratings.png Graphic file (type png)
 <use img/ratings.png>
-Package pdftex.def Info: img/ratings.png  used on input line 83.
+Package pdftex.def Info: img/ratings.png  used on input line 84.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
 
@@ -407,10 +407,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <img/cat_dist.png, id=153, 703.9098pt x 346.896pt>
 File: img/cat_dist.png Graphic file (type png)
 <use img/cat_dist.png>
-Package pdftex.def Info: img/cat_dist.png  used on input line 89.
+Package pdftex.def Info: img/cat_dist.png  used on input line 90.
 (pdftex.def)             Requested size: 351.95404pt x 173.44757pt.
 
-Overfull \hbox (6.95404pt too wide) in paragraph at lines 89--90
+Overfull \hbox (6.95404pt too wide) in paragraph at lines 90--91
  [][] 
  []
 
@@ -420,7 +420,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <img/screen_categories.png, id=154, 462.528pt x 346.896pt>
 File: img/screen_categories.png Graphic file (type png)
 <use img/screen_categories.png>
-Package pdftex.def Info: img/screen_categories.png  used on input line 95.
+Package pdftex.def Info: img/screen_categories.png  used on input line 96.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -428,7 +428,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <img/music_categories.png, id=155, 462.528pt x 346.896pt>
 File: img/music_categories.png Graphic file (type png)
 <use img/music_categories.png>
-Package pdftex.def Info: img/music_categories.png  used on input line 101.
+Package pdftex.def Info: img/music_categories.png  used on input line 102.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -436,18 +436,19 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <img/src_dist.png, id=156, 562.2606pt x 346.896pt>
 File: img/src_dist.png Graphic file (type png)
 <use img/src_dist.png>
-Package pdftex.def Info: img/src_dist.png  used on input line 107.
+Package pdftex.def Info: img/src_dist.png  used on input line 108.
 (pdftex.def)             Requested size: 281.12961pt x 173.44757pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5] [6 <./img/ratings.png> <./img/cat_dist.png>]
-<img/tl_taxonomy.png, id=178, 2007.5pt x 1664.2175pt>
+[5] [6 <./img/ratings.png> <./img/cat_dist.png>] [7 <./img/screen_categories.pn
+g> <./img/music_categories.png>]
+<img/tl_taxonomy.png, id=184, 2007.5pt x 1664.2175pt>
 File: img/tl_taxonomy.png Graphic file (type png)
 <use img/tl_taxonomy.png>
-Package pdftex.def Info: img/tl_taxonomy.png  used on input line 122.
+Package pdftex.def Info: img/tl_taxonomy.png  used on input line 123.
 (pdftex.def)             Requested size: 260.98416pt x 216.35587pt.
- [7 <./img/screen_categories.png> <./img/music_categories.png>]
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -458,37 +459,37 @@ shed their Word2Vec
  []
 
 
-Overfull \hbox (33.75073pt too wide) in paragraph at lines 143--145
+Overfull \hbox (33.75073pt too wide) in paragraph at lines 139--141
 \OT1/cmr/m/n/10 In 2018, Em-bed-dings from Lan-guage Mod-els (ELMo) was pub-lis
 hed [[]].
  []
 
-[9 <./img/tl_taxonomy.png>] [10] (./main.bbl [11
+[9 <./img/tl_taxonomy.png>] [10] [11] (./main.bbl [12
 
 ]
-Underfull \hbox (badness 2538) in paragraph at lines 80--82
+Underfull \hbox (badness 2538) in paragraph at lines 87--89
 []\OT1/cmr/m/n/10 Radford, A., Narasimhan, K., Sal-i-mans, T., and
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 162.
- [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 162.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
+ [13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 162.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 162.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 157.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 157.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: DF3CCA4149B717B48D71331FC6612988;929.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 162.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 157.
  ) 
 Here is how much of TeX's memory you used:
- 6934 strings out of 480994
- 112418 string characters out of 5916033
- 371709 words of memory out of 5000000
- 22265 multiletter control sequences out of 15000+600000
+ 6937 strings out of 480994
+ 112486 string characters out of 5916033
+ 371779 words of memory out of 5000000
+ 22266 multiletter control sequences out of 15000+600000
  547791 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,42p,1808b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,7n,42p,1953b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{c:/tex
 live/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2019/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019/texmf-dist/fonts/type1
@@ -499,10 +500,10 @@ b><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2019
 /texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2019/texmf-dis
 t/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on main.pdf (16 pages, 514373 bytes).
+Output written on main.pdf (17 pages, 516879 bytes).
 PDF statistics:
- 272 PDF objects out of 1000 (max. 8388607)
- 227 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
+ 279 PDF objects out of 1000 (max. 8388607)
+ 233 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
