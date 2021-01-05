@@ -15,12 +15,21 @@ import numpy as np
 #from helpers import eval_func, generate_dataset
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
+import os
+import conllu
+import matplotlib.pyplot as plt
+import json
 """
 TODO:
+    Metadata:
+    - Need to sort by domains
+
 Clean up text (remove punctuations etc)
 Remove stop words?
 Sort by domains
 Set grades as label
+Train BoW for each domain and experiment
+
 """
 if __name__ == "__main__":
     # Add command line arguments
@@ -28,6 +37,8 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument(
         '--path', help="Path to the training corpus", action='store')
+    parser.add_argument(
+        '--meta', help="Path to the metadata", action='store')
     parser.add_argument('--vocab_size', help="How many words types to consider", action='store',
                         type=int, default=3000)
     parser.add_argument('--hidden_dim', help="Size of the hidden layer(s)", action='store',
@@ -43,11 +54,18 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     datafile = args.path
-
+    metadata = args.meta
     # Set RNG seed for reproducibility
     torch.manual_seed(42)
 
     print('Loading the dataset...')
+
+    with open(metadata, "r", encoding='utf-8') as f:
+        data = f.read()
+        meta = json.loads(data)
+
+
+
     train_dataset = pd.read_csv(
         datafile, sep='\t', header=0, compression='gzip')
     print('Finished loading the dataset')
