@@ -6,3 +6,6 @@ Dom1
 Dom2
 Dom3
 	Dom3 Dom2 Dom1
+
+Use SVM
+Use majority class classifier

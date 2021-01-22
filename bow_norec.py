@@ -16,107 +16,131 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 import os
-import conllu
 import matplotlib.pyplot as plt
 import json
-"""
-TODO:
-    Metadata:
-    - Need to sort by domains
-
-Clean up text (remove punctuations etc)
-Remove stop words?
-Sort by domains
-Set grades as label
-Train BoW for each domain and experiment
-
-"""
+#print(torch.cuda.is_available())
 if __name__ == "__main__":
     # Add command line arguments
     # This is probably the easiest way to store arguments for downstream
     parser = ArgumentParser()
     parser.add_argument(
-        '--path', help="Path to the training corpus", action='store')
+        '--path', help="Path to the training corpus", action='store', default="../norec/pre_proc_data/")
     parser.add_argument(
-        '--meta', help="Path to the metadata", action='store')
+        '--train', help="Training category", action='store', default="sports")    
+    parser.add_argument(
+        '--dev', help="Dev category", action='store', default="sports")
     parser.add_argument('--vocab_size', help="How many words types to consider", action='store',
-                        type=int, default=3000)
+                        type=int, default=10000)
     parser.add_argument('--hidden_dim', help="Size of the hidden layer(s)", action='store',
-                        type=int, default=64)
+                        type=int, default=256)
     parser.add_argument('--batch_size', help="Size of mini-batches", action='store', type=int,
                         default=16)
     parser.add_argument('--lr', action='store',
                         help="Learning rate", type=float, default=1e-3)
     parser.add_argument('--epochs', action='store', help="Max number of epochs", type=int,
                         default=15)
-    parser.add_argument('--split', action='store', help="Ratio of train/dev split", type=float,
-                        default=0.8)
-    args = parser.parse_args()
 
+    args = parser.parse_args()
     datafile = args.path
-    metadata = args.meta
+    train = pd.read_pickle(args.path + "/train/" + args.train + ".pkl")
+    dev = pd.read_pickle(args.path + "/dev/" + args.dev + ".pkl")
     # Set RNG seed for reproducibility
     torch.manual_seed(42)
 
-    print('Loading the dataset...')
-
-    with open(metadata, "r", encoding='utf-8') as f:
-        data = f.read()
-        meta = json.loads(data)
-
-
-
-    train_dataset = pd.read_csv(
-        datafile, sep='\t', header=0, compression='gzip')
-    print('Finished loading the dataset')
     """
-    #Uncomment this to reproduce plot of dataset before oversampling
-    dist = train_dataset['source'].value_counts()
-    dist.plot(kind='bar')
-    plt.show()
-    plt.close()
-    """
+    print('Loading training data...')
+    train_data = os.scandir(datafile + train)
+    dfs = []
+    for i in train_data:
+        dfs.append(pd.read_csv(i, header=0))
+    frame = pd.concat(dfs, axis=0, ignore_index=True)
+    frame.to_pickle(datafile + train + "/" + args.train + ".pkl")
+    frame = []
+
+    print('Loading dev data...')
+    dev_data = os.scandir(datafile + dev)
+    dfs = []
+    for i in dev_data:
+        dfs.append(pd.read_csv(i, header=0))
+    frame = pd.concat(dfs, axis=0, ignore_index=True)
+    frame.to_pickle(datafile + dev + "/" + args.dev + ".pkl")
+    print(frame)
+    frame = []
+
+    print('Loading test data...')
+    test_data = os.scandir(datafile + test)
+    dfs = []
+    for i in test_data:
+        dfs.append(pd.read_csv(i, header=0))
+    frame = pd.concat(dfs, axis=0, ignore_index=True)
+    frame.to_pickle(datafile + test + "/" + args.test + ".pkl")
+    frame = []
 
 
-    classes = train_dataset['source']  # Array with correct classes
-    texts = train_dataset['text']
+    col1 = rating
+    col2 = text
+    row = review
+        Rating    Text
+            6   djsiaodjsaiod
+            2   dsadsadsadsda
+    """     
 
+
+    ratings = train['rating']  # Array with correct ratings
+    #print(ratings)
+    texts = train['text']
+
+    dev_ratings = dev['rating']
+    dev_texts = dev['text']
+
+    bow_ratings = ratings.append(dev_ratings)
+    bow_texts = texts.append(dev_texts)
     # CountVectorizer creates a bag-of-words vector, using at most `max_features' words
     # binary = True indicates binary BoW
     # ngram_range set to (1,2) to include both unigrams and bigrams
     text_vectorizer = CountVectorizer(
         max_features=args.vocab_size, strip_accents='unicode', lowercase=False, binary=True, ngram_range=(1,2))
+    
     # LabelEncoder returns integers for each label
     label_vectorizer = LabelEncoder()
 
     # We specify float32 because the default, float64, is inappropriate for pytorch:
     input_features = text_vectorizer.fit_transform(
-        texts.values).toarray().astype(np.float32)
-    gold_classes = label_vectorizer.fit_transform(classes.values)
-
+        bow_texts.values).toarray().astype(np.float32)
+    gold_classes = label_vectorizer.fit_transform(bow_ratings.values)
+    """
+    dev_input_features = text_vectorizer.fit_transform(dev_texts.values).toarray().astype(np.float32)
+    dev_gold_classes = label_vectorizer.fit_transform(dev_ratings.values)
+    """
+    print(len(train), len(dev))
+    print(len(bow_texts))
+    print(input_features.shape)
+    input_features, dev_input_features = input_features[len(train):, :], input_features[:len(train), :]
+    gold_classes, dev_gold_classes = gold_classes[len(train):], gold_classes[:len(train)]
     # Saving the vectorizer vocabulary for future usage (e.g., inference on test data):
     with open('vectorizer.pickle', 'wb') as f:
         pickle.dump(text_vectorizer, f)
 
     print('Train data:', input_features.shape)
-
+    print('Dev data:', dev_input_features.shape)
     # Number of classes:
     classes = label_vectorizer.classes_
     num_classes = len(classes)
+    """
     print(num_classes, 'classes')
     print(classes)
-
     # Splitting data with equal class distribution => stratify=gold_classes
     X_train, X_dev, y_train, y_dev = train_test_split(
         input_features, gold_classes, test_size=1-args.split, stratify=gold_classes)
-
-    # Create a PyTorch object for the data:
-    X_train, X_dev = torch.from_numpy(X_train).type(torch.float), torch.from_numpy(X_dev).type(torch.float)
-    y_train, y_dev = torch.from_numpy(y_train).type(torch.long), torch.from_numpy(y_dev).type(torch.long)
+    """
     
-    train = data.TensorDataset(X_train, y_train)
-    dev = data.TensorDataset(X_dev, y_dev)
-    print('Training instances after split:', len(train))
+    # Create a PyTorch object for the data:
+    X_features, X_classes = torch.from_numpy(input_features).type(torch.float), torch.from_numpy(gold_classes).type(torch.long)
+    Y_features, Y_classes = torch.from_numpy(dev_input_features).type(torch.float), torch.from_numpy(dev_gold_classes).type(torch.long)
+    #print(input_features, gold_classes)
+    train = data.TensorDataset(X_features, X_classes)
+    dev = data.TensorDataset(Y_features, Y_classes)
+    #print('Training instances after split:', len(train))
     
     train_iter = data.DataLoader(   
         train, batch_size=args.batch_size, shuffle=True)

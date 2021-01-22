@@ -1,0 +1,215 @@
+Screen:
+    Screen = 0.48
+    'Games = 0.285
+    Literature = 0.421
+    'Misc = 0.252
+    Music = 0.449
+    'Products = 0.383
+    'Restaurants = 0.165
+    Sports = 0.318
+    'Stage = 0.427
+
+Games:
+    Games = 0.168
+    Literature = 0.407
+    Misc = 0.152
+    Music = 0.409
+    Products = 0.217
+    Restaurants = 0.01
+    Screen = 0.337
+    Sports = 0.09
+    Stage = 0.48
+
+Literature:
+    Literature = 0.442
+    'Games = 0.196
+    'Misc = 0.226
+    Music = 0.397
+    Products = 0.307
+    Restaurants = 0.165
+    Screen = 0.374
+    Sports = 0.136
+    Stage = 0.547
+
+Misc:
+    Misc = 0.232
+    Games = 0.24
+    Literature = 0.444
+    Music = 0.441
+    Products = 0.354
+    Restaurants = 0.165
+    Screen = 0.4
+    Sports = 0.273
+    Stage = 0.44
+
+Music:
+    Music = 0.479
+    Games = 0.207
+    Literature = 0.433
+    Misc = 0.208
+    Products = 0.31
+    Restaurants = 0.143
+    Screen = 0.435
+    Sports = 0.273
+    Stage = 0.52
+
+Products:
+    Products = 0.217
+    Games = 0.073
+    Literature = 0.358
+    Misc = 0.102
+    Music = 0.301
+    Restaurants = 0.066
+    Screen = 0.273
+    Sports = 0.273
+    Stage = 0.347
+
+Restaurants:
+    Restaurants = 0.143
+    Games = 0.162
+    Literature = 0.435
+    Misc = 0.126
+    Music = 0.405
+    Products = 0.284
+    Screen = 0.336
+    Sports = 0.273
+    Stage = 0.493
+
+Sports:
+    Sports = 0.182
+    Games = 0.073
+    Literature = 0.456
+    Misc = 0.08
+    Music = 0.412
+    Products = 0.151
+    Restaurants = 0.077
+    Screen = 0.314
+    Stage = 0.48
+
+Stage:
+    Stage = 0.227
+    Games = 0.458
+    Literature = 0.302
+    Misc = 0.477
+    Music = 0.29
+    Products = 0.47
+    Restaurants = 0.286
+    Screen = 0.338
+    Sports = 0.0
+
+Training sports
+Saved sports vectorizers
+0.16666666666666666
+
+Training games
+Saved games vectorizers
+0.4245810055865922
+
+Training music
+Saved music vectorizers
+0.5696969696969697
+
+Training misc
+Saved misc vectorizers
+0.5043290043290043
+
+Training stage
+Saved stage vectorizers
+0.5394736842105263
+
+Training literature
+Saved literature vectorizers
+0.5300925925925926
+
+Training restaurants
+Saved restaurants vectorizers
+0.4175824175824176
+
+Training products
+Saved products vectorizers
+0.5014409221902018
+
+
+            Running with C = 1
+            0.506
+            Running with C = 2
+            0.5255
+            Running with C = 3
+            0.5241
+            Running with C = 4
+            0.5276
+            Running with C = 5
+            0.5276
+            Running with C = 6
+            0.5269
+            Running with C = 7
+            0.5262
+            Running with C = 8
+            0.5269
+            Running with C = 9
+            0.5255
+            10.0 = 0.525
+            50 = 0.522
+Train sports
+Test sports
+0.18181818181818182
+Train sports
+Test games
+0.17318435754189945
+Train sports
+Test music
+0.2812736921910538
+Train sports
+Test misc
+0.210412147505423
+Train sports
+Test stage
+0.21333333333333335
+Train sports
+Test literature
+0.2534883720930233
+Train sports
+Test restaurants
+0.2857142857142857
+Train sports
+Test products
+0.1536231884057971
+Train games
+Test sports
+0.09090909090909091
+Train games
+Test games
+0.5027932960893855
+Train games
+Test music
+0.4291129643669447
+Train games
+Test misc
+0.48156182212581344
+Train games
+Test stage
+0.52
+Train games
+Test literature
+0.4604651162790698
+Train games
+Test restaurants
+0.32967032967032966
+Train games
+Test products
+0.46956521739130436
+Train music
+Test sports
+0.4090909090909091
+Train music
+Test games
+0.5418994413407822
+Train music
+Test music
+0.5595147839272175
+Train music
+Test misc
+0.5466377440347071
+Train music
+Test stage
+0.5733333333333334

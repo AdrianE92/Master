@@ -1,16 +1,17 @@
+\babel@toc {UKenglish}{}
+\contentsline {part}{I\hspace {1em}Introduction}{1}{part.1}%
 \contentsline {chapter}{\numberline {1}Background}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Introduction}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Sentiment Analysis}{3}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Datasets}{4}{section.1.3}%
-\contentsline {subsection}{Stanford Sentiment Treebank}{4}{section*.2}%
-\contentsline {subsection}{IMDb Movie Review Dataset}{5}{section*.3}%
-\contentsline {subsection}{Amazon Review Data}{5}{section*.4}%
-\contentsline {subsection}{Twitter}{5}{section*.5}%
-\contentsline {subsection}{Yelp}{5}{section*.6}%
-\contentsline {subsection}{NoReC}{5}{section*.7}%
-\contentsline {section}{\numberline {1.4}Domain Adaptation}{7}{section.1.4}%
-\contentsline {subsection}{Transfer Learning}{8}{section*.13}%
-\contentsline {subsection}{Pre-Training}{9}{section*.15}%
-\contentsline {subsection}{Static Embeddings}{9}{section*.16}%
-\contentsline {subsection}{Contextualized Embeddings}{10}{section*.17}%
-\contentsline {subsection}{Fine-tuning}{11}{section*.18}%
+\contentsline {section}{\numberline {1.1}Sentiment Analysis}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Datasets}{4}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Stanford Sentiment Treebank}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}IMDb Movie Review Dataset}{5}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Amazon Review Data}{5}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Twitter}{5}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Yelp}{5}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}NoReC}{5}{subsection.1.2.6}%
+\contentsline {section}{\numberline {1.3}Domain Adaptation}{6}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Transfer Learning}{8}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Pre-Training}{9}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Static Embeddings}{9}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Contextualized Embeddings}{10}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Fine-tuning}{11}{subsection.1.3.5}%
