@@ -35,74 +35,53 @@ if __name__ == "__main__":
     datafile = args.path
     cats = ['sports', 'games', 'music', 'misc', 'stage', 'literature', 'restaurants', 'products', 'screen']
 
-
-
     for i in cats:
-        ratings = pd.Series()
-        texts = pd.Series()
-        for k in cats:
-            train = pd.read_pickle(args.path + "/train/" + k + ".pkl")
-            ratings = ratings.append(train['rating'])
-            texts = texts.append(train['text'])
-            print(len(texts))
-        
-        # Vectorize labels
-        label_vectorizer = LabelEncoder()
-        # Vectorize texts
-        text_vectorizer = TfidfVectorizer()
-        """
-        text_vectorizer = CountVectorizer(
-            max_features=args.vocab_size, strip_accents='unicode', lowercase=True, binary=False, ngram_range=(1,1))
-        """
-        # Transform texts
-        input_features = text_vectorizer.fit_transform(
-            texts.values)
-        # Transform labels
-        label_vectorizer.fit([1,2,3,4,5,6])
-        gold_classes = label_vectorizer.transform(ratings.values)
-        clf = svm.SVC(kernel='linear')
-        clf.fit(input_features, gold_classes)
         for j in cats:
-            print("Train", 'Everything')
+            print("Train", i)
             print("Test", j)
-            
+            train = pd.read_pickle(args.path + "/train/" + i + ".pkl")
             dev = pd.read_pickle(args.path + "/dev/" + j + ".pkl")
             test = pd.read_pickle(args.path + "/test/" + j + ".pkl")
             # Set RNG seed for reproducibility
+            torch.manual_seed(42)
 
             # Split data in rating and text for train, dev and test.
-            """
             ratings = train['rating']  
             texts = train['text']
-            """
 
             dev_ratings = dev['rating']
             dev_texts = dev['text']
 
             test_ratings = test['rating']
             test_texts = test['text']
-            
 
+            # Vectorize texts
+            text_vectorizer = TfidfVectorizer()
+            # Vectorize labels
+            label_vectorizer = LabelEncoder()
+
+            # Transform texts
+            input_features = text_vectorizer.fit_transform(
+                texts.values).toarray()
+            # Transform labels
+            label_vectorizer.fit([1,2,3,4,5,6])
+            gold_classes = label_vectorizer.transform(ratings.values)
             
+            clf = svm.SVC(kernel='linear')
+            clf.fit(input_features, gold_classes)
+
             # Transform dev_texts
             dev_input_features = text_vectorizer.transform(dev_texts).toarray()
             
-            # Transform dev_labels
-            # THIS IS WHERE IT FAILS
-            # I could just uncomment it for now as we only use the test set, but I imagine that
-            # I'll get the same error in the next two lines too.
-            # Problem is that label_vectorizer contains no reviews with Rating = 1
             dev_gold_classes = label_vectorizer.transform(dev_ratings)
             
             # Transform test_texts
             test_input_features = text_vectorizer.transform(test_texts).toarray()
-            
             # Transform test_labels
             test_gold_classes = label_vectorizer.transform(test_ratings)
 
-
+            clf = svm.SVC(C=4)
+            clf.fit(input_features, gold_classes)
             score = clf.score(test_input_features, test_gold_classes)
             clf = None
             print(score)
-            
-        break

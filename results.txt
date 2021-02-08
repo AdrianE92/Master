@@ -153,63 +153,325 @@ Saved products vectorizers
 Train sports
 Test sports
 0.18181818181818182
+
 Train sports
 Test games
 0.17318435754189945
+
 Train sports
 Test music
 0.2812736921910538
+
 Train sports
 Test misc
 0.210412147505423
+
 Train sports
 Test stage
 0.21333333333333335
+
 Train sports
 Test literature
 0.2534883720930233
+
 Train sports
 Test restaurants
 0.2857142857142857
+
 Train sports
 Test products
 0.1536231884057971
+
+--------------------------
+
 Train games
 Test sports
 0.09090909090909091
+
 Train games
 Test games
 0.5027932960893855
+
 Train games
 Test music
 0.4291129643669447
+
 Train games
 Test misc
 0.48156182212581344
+
 Train games
 Test stage
 0.52
+
 Train games
 Test literature
 0.4604651162790698
+
 Train games
 Test restaurants
 0.32967032967032966
+
 Train games
 Test products
 0.46956521739130436
+
+------------------------------
+
 Train music
 Test sports
 0.4090909090909091
+
 Train music
 Test games
 0.5418994413407822
+
 Train music
 Test music
 0.5595147839272175
+
 Train music
 Test misc
 0.5466377440347071
+
 Train music
 Test stage
 0.5733333333333334
+
+Train music
+Test literature
+0.4790697674418605
+
+Train music
+Test restaurants
+0.3956043956043956
+
+Train music
+Test products
+0.4260869565217391
+
+----------------------------
+
+Train misc
+Test sports
+0.2727272727272727
+
+Train misc
+Test games
+0.5139664804469274
+
+Train misc
+Test music
+0.46626231993934797
+
+Train misc
+Test misc
+0.527114967462039
+
+Train misc
+Test stage
+0.5066666666666667
+
+Train misc
+Test literature
+0.5209302325581395
+
+Train misc
+Test restaurants
+0.4065934065934066
+
+Train misc
+Test products
+0.463768115942029
+
+------------------------------------
+
+Train stage
+Test sports
+0.2727272727272727
+
+Train stage
+Test games
+0.46368715083798884
+
+Train stage
+Test music
+0.4268385140257771
+
+Train stage
+Test misc
+0.48590021691973967
+
+Train stage
+Test stage
+0.56
+
+Train stage
+Test literature
+0.46511627906976744
+
+Train stage
+Test restaurants
+0.38461538461538464
+
+Train stage
+Test products
+0.4666666666666667
+
+----------------------------------------
+
+Train literature
+Test sports
+0.22727272727272727
+
+Train literature
+Test games
+0.4748603351955307
+
+Train literature
+Test music
+0.4533737680060652
+
+Train literature
+Test misc
+0.49023861171366595
+
+Train literature
+Test stage
+0.5066666666666667
+
+Train literature
+Test literature
+0.5395348837209303
+
+Train literature
+Test restaurants
+0.42857142857142855
+
+Train literature
+Test products
+0.4463768115942029
+
+-----------------------------------
+
+Train restaurants
+Test sports
+0.18181818181818182
+
+Train restaurants
+Test games
+0.329608938547486
+
+Train restaurants
+Test music
+0.32297194844579225
+
+Train restaurants
+Test misc
+0.3232104121475054
+
+Train restaurants
+Test stage
+0.29333333333333333
+
+Train restaurants
+Test literature
+0.3
+
+Train restaurants
+Test restaurants
+0.46153846153846156
+
+Train restaurants
+Test products
+0.2028985507246377
+
+-----------------------------
+
+Train products
+Test sports
+0.09090909090909091
+
+Train products
+Test games
+0.45251396648044695
+
+Train products
+Test music
+0.40636846095526913
+
+Train products
+Test misc
+0.4793926247288503
+
+Train products
+Test stage
+0.49333333333333335
+
+Train products
+Test literature
+0.44651162790697674
+
+Train products
+Test restaurants
+0.2857142857142857
+
+Train products
+Test products
+0.5043478260869565
+
+-------------------------------
+
+Train sports
+Test screen
+0.3079076277116865
+Train games
+Test screen
+0.39538138558432473
+Train music
+Test screen
+0.49615115465360393
+Train misc
+Test screen
+0.4926522043386984
+Train stage
+Test screen
+0.40377886634009796
+Train literature
+Test screen
+0.43806857942617217
+Train restaurants
+Test screen
+0.3820853743876837
+Train products
+Test screen
+0.36039188243526943
+
+-----------------------------------
+Train screen
+Test sports
+0.36363636363636365
+Train screen
+Test games
+0.4692737430167598
+Train screen
+Test music
+0.4609552691432904
+Train screen
+Test misc
+0.4880694143167028
+Train screen
+Test stage
+0.5066666666666667
+Train screen
+Test literature
+0.4813953488372093
+Train screen
+Test restaurants
+0.42857142857142855
+Train screen
+Test products
+0.3826086956521739
+Train screen
+Test screen
+0.543037088873338
