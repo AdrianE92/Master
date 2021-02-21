@@ -87,11 +87,6 @@ if __name__ == "__main__":
             # Transform dev_texts
             dev_input_features = text_vectorizer.transform(dev_texts).toarray()
             
-            # Transform dev_labels
-            # THIS IS WHERE IT FAILS
-            # I could just uncomment it for now as we only use the test set, but I imagine that
-            # I'll get the same error in the next two lines too.
-            # Problem is that label_vectorizer contains no reviews with Rating = 1
             dev_gold_classes = label_vectorizer.transform(dev_ratings)
             
             # Transform test_texts

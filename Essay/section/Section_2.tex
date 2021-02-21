@@ -1,0 +1,31 @@
+\chapter{Temp}
+\label{sec:lab}
+\section{Preprocessing}
+The NoReC dataset consists of over 43.000 full-text reviews as raw text. It also contains a metadata-file in json-format. Each review's filename is six digits, corresponding to the review's metadata in the json-file. The original dataset has all reviews divided into training set, development set and test set. To more easily conduct domain adaptation experiments, it would be sensible to have the reviews sorted by domains while keeping the original split in the data. Further, as the reviews are in a raw text format, we need to tokenize them. To achieve this, I used NLTK's pre-trained PunktSentenceTokenizer for Norwegian, as a basis for NLTK's word\_tokenize(). I iterated through all reviews in their respective split, found their rating and category in the metadata, and created CSV-files with "rating,text" as headers, dividing them into folders based on category. This way we get to keep the train, test and development split, while we're able to easily use the rating for each review as a label. Further, we would not want to read every review each time we ran an experiment for a given category, so I appended all reviews in each category to a pandas dataframe, and stored them as a pickle-file.
+\section{Initial Experiments}
+To create a baseline for domain adaptation on the NoReC dataset, I started conducting experiments with Bag of Words, TF-IDF, SVM.\\
+\begin{table}[]
+	\begin{tabular}{|l|c|l|l|l|l|l|l|l|l|}
+		\hline
+		Train/Test & \multicolumn{1}{l|}{Screen}& Music     	 & Products       & Literature 		& Misc 	  		& Games 		& Rest.         & Stage  		& Sports        \\ \hline
+		Screen     & \textbf{0.574}             & 0.48           & 0.388          & 0.497	   		& 0.507    		& 0.486			& 0.549         & 0.506  		& 0.227			\\ \hline
+		Music	   & 0.515                      & \textbf{0.56}  & 0.426          & 0.467 	   		& 0.518    		& 0.474 		& 0.461         & 0.493  		& 0.272 	   \\ \hline
+		Products   & 0.328                      & 0.411			 & \textbf{0.504} & 0.458 	   		& 0.483    		& 0.48	 		& 0.23          & 0.493  		& 0.091        \\ \hline
+		Literature & 0.406                      & 0.464          & 0.394          & \textbf{0.544}	& 0.507    		& 0.430 		& 0.395 		& 0.48  		& 0.227		\\ \hline
+		Misc  	   & 0.442                      & 0.496 		 & 0.495          & 0.521 	   		& \textbf{0.54}	& 0.441 		& 0.274         & 0.56   		& 0.227   	\\ \hline
+		Games      & 0.363                      & 0.433          & 0.498          & 0.446 	   		& \textbf{0.507} & 0.48			& 0.23          & 0.48   		& 0.09 		  \\ \hline
+		Rest.      & 0.383 						& 0.318          & 0.258          & 0.332 	   		& 0.31    		& 0.273 		& \textbf{0.45}& 0.32	  		& 0.181        \\ \hline
+		Stage      & 0.34 						& 0.428          & 0.498          & 0.458 	   		& 0.488    		& 0.463 		& 0.263			& \textbf{0.533}& 0.272  	\\ \hline
+		Sports     & 0.202 						& 0.16           & 0.095          & 0.118 	   		& 0.134    		& 0.128 		& 0.22          & 0.066  		& 0.136   \\ \hline
+	\end{tabular}
+\end{table}
+\\
+\begin{table}[]
+	\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+		\hline
+		Screen                       & Music & Products  & Literature & Misc. & Games & Rest. & Stage & Sports         \\ \hline
+		\multicolumn{1}{|c|}{0.578}  & 0.565 & 0.533 	 & 0.579 	  & \textbf{0.583} & 0.502 & 0.571 & 0.573  & 0.045 \\ \hline
+	\end{tabular}
+\end{table}
+TODO:\\
+Majority class classifier

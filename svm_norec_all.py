@@ -36,18 +36,31 @@ if __name__ == "__main__":
     cats = ['sports', 'games', 'music', 'misc', 'stage', 'literature', 'restaurants', 'products', 'screen']
 
     for i in cats:
+        train = pd.read_pickle(args.path + "/train/" + i + ".pkl")
+        # Split data in rating and text for train, dev and test.
+        ratings = train['rating']  
+        texts = train['text']
+        # Vectorize texts
+        text_vectorizer = TfidfVectorizer()
+        # Vectorize labels
+        label_vectorizer = LabelEncoder()
+
+        # Transform texts
+        input_features = text_vectorizer.fit_transform(
+            texts.values).toarray()
+        # Transform labels
+        label_vectorizer.fit([1,2,3,4,5,6])
+        gold_classes = label_vectorizer.transform(ratings.values)
+        clf = svm.SVC(kernel='linear')
+        clf.fit(input_features, gold_classes)
         for j in cats:
             print("Train", i)
             print("Test", j)
-            train = pd.read_pickle(args.path + "/train/" + i + ".pkl")
             dev = pd.read_pickle(args.path + "/dev/" + j + ".pkl")
             test = pd.read_pickle(args.path + "/test/" + j + ".pkl")
             # Set RNG seed for reproducibility
             torch.manual_seed(42)
 
-            # Split data in rating and text for train, dev and test.
-            ratings = train['rating']  
-            texts = train['text']
 
             dev_ratings = dev['rating']
             dev_texts = dev['text']
@@ -55,20 +68,7 @@ if __name__ == "__main__":
             test_ratings = test['rating']
             test_texts = test['text']
 
-            # Vectorize texts
-            text_vectorizer = TfidfVectorizer()
-            # Vectorize labels
-            label_vectorizer = LabelEncoder()
-
-            # Transform texts
-            input_features = text_vectorizer.fit_transform(
-                texts.values).toarray()
-            # Transform labels
-            label_vectorizer.fit([1,2,3,4,5,6])
-            gold_classes = label_vectorizer.transform(ratings.values)
             
-            clf = svm.SVC(kernel='linear')
-            clf.fit(input_features, gold_classes)
 
             # Transform dev_texts
             dev_input_features = text_vectorizer.transform(dev_texts).toarray()
@@ -80,8 +80,6 @@ if __name__ == "__main__":
             # Transform test_labels
             test_gold_classes = label_vectorizer.transform(test_ratings)
 
-            clf = svm.SVC(C=4)
-            clf.fit(input_features, gold_classes)
             score = clf.score(test_input_features, test_gold_classes)
-            clf = None
             print(score)
+        clf = None

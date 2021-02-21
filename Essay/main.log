@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.10)  29 JAN 2021 11:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.10)  17 FEB 2021 13:52
 entering extended mode
 **./main.tex
 (main.tex
@@ -807,7 +807,11 @@ ftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count298
 \l__pdf_internal_box=\box51
-) (main.aux (section/Section_1.aux))
+) (main.aux (section/Section_1.aux) (section/Section_2.aux
+
+LaTeX Warning: Label `sec:lab' multiply defined.
+
+))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -891,7 +895,7 @@ File: t1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for T1/ua1.
 )
 LaTeX Font Info:    Font shape `T1/ua1/m/sl' in size <20> not available
 (Font)              Font shape `T1/ua1/m/it' tried instead on input line 32.
-<DUO_UiO_segl.png, id=67, 142.3719pt x 142.3719pt>
+<DUO_UiO_segl.png, id=79, 142.3719pt x 142.3719pt>
 File: DUO_UiO_segl.png Graphic file (type png)
 <use DUO_UiO_segl.png>
 Package pdftex.def Info: DUO_UiO_segl.png  used on input line 32.
@@ -1012,82 +1016,112 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--20
  []
 
 [3] [4] [5]
-<img/ratings.png, id=203, 462.528pt x 346.896pt>
-File: img/ratings.png Graphic file (type png)
-<use img/ratings.png>
-Package pdftex.def Info: img/ratings.png  used on input line 56.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<img/cat_dist.png, id=204, 703.9098pt x 346.896pt>
-File: img/cat_dist.png Graphic file (type png)
-<use img/cat_dist.png>
-Package pdftex.def Info: img/cat_dist.png  used on input line 62.
-(pdftex.def)             Requested size: 351.95404pt x 173.44757pt.
-<img/screen_categories.png, id=205, 462.528pt x 346.896pt>
-File: img/screen_categories.png Graphic file (type png)
-<use img/screen_categories.png>
-Package pdftex.def Info: img/screen_categories.png  used on input line 68.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<img/music_categories.png, id=206, 462.528pt x 346.896pt>
-File: img/music_categories.png Graphic file (type png)
-<use img/music_categories.png>
-Package pdftex.def Info: img/music_categories.png  used on input line 74.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<img/src_dist.png, id=207, 562.2606pt x 346.896pt>
-File: img/src_dist.png Graphic file (type png)
-<use img/src_dist.png>
-Package pdftex.def Info: img/src_dist.png  used on input line 80.
-(pdftex.def)             Requested size: 281.12961pt x 173.44757pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 54.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 84.
+               Default added (so using `tbp') on input line 63.
 
 
-Overfull \hbox (102.89555pt too wide) in paragraph at lines 85--98
+Overfull \hbox (71.02103pt too wide) in paragraph at lines 65--70
 [][] 
  []
 
-[6 <./img/ratings.png> <./img/cat_dist.png>]
+<img/ratings_new.png, id=220, 585.387pt x 440.1243pt>
+File: img/ratings_new.png Graphic file (type png)
+<use img/ratings_new.png>
+Package pdftex.def Info: img/ratings_new.png  used on input line 75.
+(pdftex.def)             Requested size: 292.69278pt x 220.0616pt.
+<img/screen_categories.png, id=221, 462.528pt x 346.896pt>
+File: img/screen_categories.png Graphic file (type png)
+<use img/screen_categories.png>
+Package pdftex.def Info: img/screen_categories.png  used on input line 81.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/music_categories.png, id=222, 462.528pt x 346.896pt>
+File: img/music_categories.png Graphic file (type png)
+<use img/music_categories.png>
+Package pdftex.def Info: img/music_categories.png  used on input line 87.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/src_dist_new.png, id=223, 597.6729pt x 346.896pt>
+File: img/src_dist_new.png Graphic file (type png)
+<use img/src_dist_new.png>
+Package pdftex.def Info: img/src_dist_new.png  used on input line 93.
+(pdftex.def)             Requested size: 298.83571pt x 173.44757pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6 <./img/ratings_new.png>]
 
 LaTeX Warning: Text page 7 contains only floats.
 
-[7 <./img/screen_categories.png> <./img/music_categories.png> <./img/src_dist.p
-ng>]
-<img/tl_taxonomy.png, id=225, 2007.5pt x 1664.2175pt>
+[7 <./img/screen_categories.png> <./img/music_categories.png> <./img/src_dist_n
+ew.png>]
+<img/tl_taxonomy.png, id=240, 2007.5pt x 1664.2175pt>
 File: img/tl_taxonomy.png Graphic file (type png)
 <use img/tl_taxonomy.png>
-Package pdftex.def Info: img/tl_taxonomy.png  used on input line 111.
+Package pdftex.def Info: img/tl_taxonomy.png  used on input line 109.
 (pdftex.def)             Requested size: 260.98416pt x 216.35587pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8] [9 <./img/tl_taxonomy.png>] [10]) [11] (main.bbl [12
+[8] [9 <./img/tl_taxonomy.png>] [10]) [11]
+\openout2 = `section/Section_2.aux'.
+
+ (section/Section_2.tex
+Chapter 2.
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 7.
+
+
+Overfull \hbox (102.89555pt too wide) in paragraph at lines 8--21
+[][] 
+ []
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 23.
+
+
+Overfull \hbox (41.16107pt too wide) in paragraph at lines 24--29
+[][] 
+ []
+
+) [12
 
 
 
-] [13]) [14] (main.aux
-(section/Section_1.aux))
+
+] [13] (main.bbl [14
+
+
+
+] [15]) [16] (main.aux (section/Section_1.aux)
+(section/Section_2.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 04D3BC5DCEF38236BBBC7DB7CF0E1E90;1037.
+(rerunfilecheck)             Checksum: 7B18138013D89779CB6CB572D40841AC;1209.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 12012 strings out of 479697
- 191355 string characters out of 2866657
- 510788 words of memory out of 3000000
- 28746 multiletter control sequences out of 15000+200000
+ 12024 strings out of 479697
+ 191678 string characters out of 2866657
+ 507372 words of memory out of 3000000
+ 28745 multiletter control sequences out of 15000+200000
  458191 words of font info for 90 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,87p,1837b,512s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 84i,10n,87p,1837b,512s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Adrian/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C
 :/Users/Adrian/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-
 t1.enc}<C:/Users/Adrian/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-sup
@@ -1098,9 +1132,9 @@ rw/palatino/uplb8a.pfb><C:/Users/Adrian/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/urw/palatino/uplr8a.pfb><C:/Users/Adrian/AppData/Local/Programs/MiKTeX/fonts
 /type1/urw/palatino/uplr8a.pfb><C:/Users/Adrian/AppData/Local/Programs/MiKTeX/f
 onts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (23 pages, 532923 bytes).
+Output written on main.pdf (25 pages, 527994 bytes).
 PDF statistics:
- 315 PDF objects out of 1000 (max. 8388607)
- 69 named destinations out of 1000 (max. 500000)
- 164 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 76 named destinations out of 1000 (max. 500000)
+ 183 words of extra memory for PDF output out of 10000 (max. 10000000)
 

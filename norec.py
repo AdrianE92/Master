@@ -10,7 +10,6 @@ TODO:
     - Need to sort by domains
 
 Clean up text (remove punctuations etc)
-Remove stop words?
 Sort by domains
 Set grades as label
 Train BoW for each domain and experiment
@@ -38,19 +37,36 @@ dev = os.scandir("../norec/data/dev/")
 test = os.scandir("../norec/data/test/")
 metadata = "../norec/data/metadata.json"
 
-train_rating = {'1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0}
+train_rating = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
 train_lng = {'nb': 0, 'nn': 0}
 train_total = 0
 header = ["rating", "text"]
 with open(metadata, "r", encoding='utf-8') as f:
     data = f.read()
     meta = json.loads(data)
-cats = []
+cats = {}
+sources = {}
 
 for i in meta:
     #print(meta[i]["category"])
     if not meta[i]["category"] in cats:
-        cats.append(meta[i]["category"])
+        cats[meta[i]["category"]] = 0
+    else:
+        cats[meta[i]["category"]] += 1
+
+for i in meta:
+    train_rating[meta[i]["rating"]] += 1
+    train_lng[meta[i]["language"]] += 1
+
+for i in meta:
+    #print(meta[i]["category"])
+    if not meta[i]["source"] in sources:
+        sources[meta[i]["source"]] = 0
+    else:
+        sources[meta[i]["source"]] += 1
+"""
+Category: Rating
+Total: Rating
 
 print(cats)
 for i in train:
@@ -103,17 +119,18 @@ for i in dev:
         wr.writerow(header)
         wr.writerow(toks)
 print("dev complete")
-"""
 path = "../norec/pre_proc_data/train/games/000378.csv"
 data = pd.read_csv(path, header=0)
+"""
 lngs = ["nb", "nn"]
 ratings = ["1", "2", "3", "4", "5", "6"]
+source = [i for i in sources.keys()]
+source_values = [i for i in sources.values()]
 rt_values = [i for i in train_rating.values()]
 lng_values = [i for i in train_lng.values()]
 print(rt_values)
 print(lng_values)
 print(train_total)
-"""
 
 """
 tot = 28158
@@ -128,11 +145,9 @@ tot = 3513
 test = 25, 206, 576, 1147, 1355, 204
 test = 3443, 70
 
-plt.bar(ratings, rt_values)
-plt.show()
-plt.close()
-
-plt.bar(lngs, lng_values)
-plt.show()
-plt.close()
 """
+plt.bar(source, source_values)
+#plt.bar(ratings, rt_values)
+#plt.bar(lngs, lng_values)
+plt.show()
+plt.close()
