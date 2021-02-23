@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.10)  17 FEB 2021 13:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.10)  23 FEB 2021 21:15
 entering extended mode
 **./main.tex
 (main.tex
@@ -1092,7 +1092,7 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 23.
 
 
-Overfull \hbox (41.16107pt too wide) in paragraph at lines 24--29
+Overfull \hbox (78.24725pt too wide) in paragraph at lines 24--30
 [][] 
  []
 
@@ -1117,7 +1117,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  12024 strings out of 479697
  191678 string characters out of 2866657
- 507372 words of memory out of 3000000
+ 508372 words of memory out of 3000000
  28745 multiletter control sequences out of 15000+200000
  458191 words of font info for 90 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1132,7 +1132,7 @@ rw/palatino/uplb8a.pfb><C:/Users/Adrian/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/urw/palatino/uplr8a.pfb><C:/Users/Adrian/AppData/Local/Programs/MiKTeX/fonts
 /type1/urw/palatino/uplr8a.pfb><C:/Users/Adrian/AppData/Local/Programs/MiKTeX/f
 onts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (25 pages, 527994 bytes).
+Output written on main.pdf (25 pages, 528136 bytes).
 PDF statistics:
  342 PDF objects out of 1000 (max. 8388607)
  76 named destinations out of 1000 (max. 500000)
