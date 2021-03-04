@@ -18,3 +18,22 @@ TF-IDF
 Google the min_doc from sklearn tfidfvectorizer
 
 Transfer model
+
+Slå sammen i èn tabell
+
+booktabs - Latex tables
+Skrive:
+	Notere ned hvordan modellen ser ut
+	Analyse av tabellene
+	Snakke om størrelse av dataset
+	Skrive om NorBERT
+
+Finne snittlengde av reviews
+
+Prøve å klassifisere på sjanger ikke rating
+
+https://github.com/jerbarnes/typology_of_crosslingual/tree/master/analysis/proxy-a-distance
+
+Korelasjon mellom likhet og størrelse i domener
+
+Vente med NorBERT til den er ferdig trent
