@@ -3,7 +3,7 @@
 \section{Preprocessing}
 The NoReC dataset consists of over 43.000 full-text reviews as raw text. It also contains a metadata-file in json-format. Each review's filename is six digits, corresponding to the review's metadata in the json-file. The original dataset has all reviews divided into training set, development set and test set. To more easily conduct domain adaptation experiments, it would be sensible to have the reviews sorted by domains while keeping the original split in the data. Further, as the reviews are in a raw text format, we need to tokenize them. To achieve this, I used NLTK's pre-trained PunktSentenceTokenizer for Norwegian, as a basis for NLTK's word\_tokenize(). I iterated through all reviews in their respective split, found their rating and category in the metadata, and created CSV-files with "rating,text" as headers, dividing them into folders based on category. This way we get to keep the train, test and development split, while we're able to easily use the rating for each review as a label. Further, we would not want to read every review each time we ran an experiment for a given category, so I appended all reviews in each category to a pandas dataframe, and stored them as a pickle-file.
 \section{Initial Experiments}
-To create a baseline for domain adaptation on the NoReC dataset, I started conducting experiments with Bag of Words, TF-IDF, SVM.\\
+To create a baseline for domain adaptation on the NoReC dataset, I started conducting experiments with Scikit Learn's TfidfVectorizer and C-Support Vector Classification. By default, the TfidfVectorizer converts all characters to lowercase, which we might want to try without at a later point, ngram range to 1,1 and L2 normalization. For the C-Support Vector Classification, we want to change the kernel to linear, rather than the radial basis function. We then proceed to train on one domain before testing it on the other domains and repeat this for all nine domains. The second experiment I wanted to conduct, was to train the model on all of the training data before testing on separate domains, and to trian the model on separate domains before testing it on all the test data as one test set.\\
 \begin{table}[]
 	\begin{tabular}{|l|c|l|l|l|l|l|l|l|l|}
 		\hline
@@ -29,4 +29,8 @@ To create a baseline for domain adaptation on the NoReC dataset, I started condu
 	\end{tabular}
 \end{table}
 TODO:\\
+Table analysis
+
 Majority class classifier
+Proxy A Distance
+Average length of reviews

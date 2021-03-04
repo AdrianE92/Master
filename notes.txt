@@ -10,9 +10,9 @@ Dom3
 Use SVM
 Use majority class classifier
 
-Sort by results,
-Test on all training data
-Train on all test data
+*Sort by results,
+*Test on all training data
+*Train on all test data
 What happens if I randomly sample x data (x = n_sports)
 TF-IDF
 Google the min_doc from sklearn tfidfvectorizer
