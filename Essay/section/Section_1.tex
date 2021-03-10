@@ -42,7 +42,7 @@ The Yelp Review dataset \cite{zhang2016characterlevel} consists of more than 500
 
 \subsection{NoReC}
 The Norwegian Review Corpus (NoReC) is a dataset containing more than 43,000 full-text reviews from Norwegian news sources \cite{VelOvrBer18}.\\
-NoReC covers a range of different domains, including literature, movies, video games, restaurants, music, and theater, in addition to product reviews across a range of categories. Each review is labeled with a score ranging from 1-6, provided by the review author. NoReC was primarily created for training and evaluating models for document-level sentiment analysis, making it ideal for testing differences between domains on a document-level. The dataset has a good spread between scores, with 3, 4, and 5 being the most frequent. The spread makes sense, as it usually takes something particularly bad to give a score of 1 or 2 or something extraordinary to give a score of 6. Figure \ref{fig:ratings} shows a distribution of the ratings. Looking at the distributions of the categories, we can see from table \ref{tab:cat_dist} that the categories 'screen' and 'music' is the most represented by far. One of the reasons for this is that the different sources label their categories differently. Upon further inspection, we can see from figure \ref{fig:screen} and figure \ref{fig:music} that these cover a variety of different categories from the different sources (I have removed the categories 'utenriks', 'kjendis' and 'nyheter' from figure \ref{fig:screen} because these represented one, four and one reviews respectively).
+NoReC covers a range of different domains, including literature, movies, video games, restaurants, music, and theater, in addition to product reviews across a range of categories. Each review is labeled with a score ranging from 1-6, provided by the review author. NoReC was primarily created for training and evaluating models for document-level sentiment analysis, making it ideal for testing differences between domains on a document-level. The dataset has a good spread between scores, with 3, 4, and 5 being the most frequent. The spread makes sense, as it usually takes something particularly bad to give a score of 1 or 2 or something extraordinary to give a score of 6. Figure \ref{fig:ratings} shows a distribution of the ratings. Looking at the distributions of the categories, we can see from table \ref{tab:cat_dist} that the categories 'screen' and 'music' is the most represented by far. One of the reasons for this is that the different sources label their categories differently. Upon further inspection, we can see from figure \ref{fig:screen} and figure \ref{fig:music} that these cover a variety of different categories from the different sources (I have removed the categories 'utenriks', 'kjendis' and 'nyheter' from figure \ref{fig:screen} because these represented one, four and one reviews respectively). The dataset mainly cover the timespan 2003-2019, but it does contain a handful of reviews dating as far back as 1998. To make up for how language changes over time, 
 %pretraining/finetuning can be seen as DA
 
 %Distribution of domains
@@ -53,22 +53,39 @@ NoReC covers a range of different domains, including literature, movies, video g
 %Mention NoReC_fine
 \begin{table}[]
 	\centering
-	\begin{tabular}{|l|l|}
-		\hline
-		Bokmål & Nynorsk \\ \hline
-		\multicolumn{1}{|c|}{43062} &  \multicolumn{1}{c|}{552} \\ \hline
+	\begin{tabular}{@{}ll@{}}
+		\toprule
+		Bokmål & Nynorsk                 \\ \midrule
+		43,062 & \multicolumn{1}{c}{552}
 	\end{tabular}
 	\caption{Distribution of languages}
 \end{table}
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
 \begin{table}[]
-
-	\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-		\hline
-		Screen & Music & Misc & Literature & Products & Games & Restaurants & Stage & Sports \\ \hline
-		\multicolumn{1}{|c|}{14296} &  \multicolumn{1}{c|}{13203} & \multicolumn{1}{c|}{4618} & \multicolumn{1}{c|}{4312} & \multicolumn{1}{c|}{3469} & \multicolumn{1}{c|}{1798} & \multicolumn{1}{c|}{914} & \multicolumn{1}{c|}{763} & \multicolumn{1}{c|}{232}\\ \hline
-	\end{tabular}
+	\centering
+	\resizebox{\columnwidth}{!}{%
+	\begin{tabular}{@{}llllllllll@{}}
+		\toprule
+		& Screen                     & Music                      & Misc                      & Literature                & Products                  & Games                     & Rest.                   & Stage                   & Sports                  \\ \midrule
+		\multicolumn{1}{l|}{Reviews} & \multicolumn{1}{c}{14,296} & \multicolumn{1}{c}{13,203} & \multicolumn{1}{c}{4,618} & \multicolumn{1}{c}{4,312} & \multicolumn{1}{c}{3,469} & \multicolumn{1}{c}{1,798} & \multicolumn{1}{c}{914} & \multicolumn{1}{c}{763} & \multicolumn{1}{c}{232}
+	\end{tabular}%
+	}
 	\caption{The distribution of categories in the NoReC dataset}
 	\label{tab:cat_dist}
+\end{table}
+\begin{table}[]
+	\centering
+	\resizebox{\columnwidth}{!}{%
+		\begin{tabular}{@{}lccccccccc@{}}
+			\toprule
+			& \multicolumn{1}{l}{Screen} & \multicolumn{1}{l}{Music} & \multicolumn{1}{l}{Misc} & \multicolumn{1}{l}{Literature} & \multicolumn{1}{l}{Products} & \multicolumn{1}{l}{Games} & \multicolumn{1}{l}{Rest.} & \multicolumn{1}{l}{Stage} & \multicolumn{1}{l}{Sports} \\ \midrule
+			\multicolumn{1}{l|}{Train} & 422.2                      & 325.9                     & 516.3                    & 445.5                          & 981                          & 569.4                     & 789.9                     & 567                       & 503.9                      \\
+			\multicolumn{1}{l|}{Dev}   & 500.2                      & 406.5                     & 540.7                    & 584.4                          & 1082.5                       & 628.8                     & 832.8                     & 606.2                     & 165.4                      \\
+			\multicolumn{1}{l|}{Test}  & 546.2                      & 385.7                     & 538.4                    & 579.9                          & 1008                         & 740.6                     & 894.7                     & 648.6                     & 266.9                     
+		\end{tabular}%
+	}
+	\caption{Average number of tokens per review for each domain in each split}
 \end{table}
 \begin{figure}[h!]
 	\centering
