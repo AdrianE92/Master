@@ -37,3 +37,46 @@ https://github.com/jerbarnes/typology_of_crosslingual/tree/master/analysis/proxy
 Korelasjon mellom likhet og størrelse i domener
 
 Vente med NorBERT til den er ferdig trent
+
+Dev:
+	Screen 1430
+	Music 1321
+	Misc 463
+	Litt 433
+	Prod 348
+	Games 180
+	Rest 92
+	Stage 77
+	Sports 25
+Test:
+	Screen 1430
+	Music 1320
+	Misc 462
+	Litt 431
+	Prod 346
+	Games 180
+	Rest 92
+	Stage 76
+	Sports 23
+Train:
+	Screen 11440
+	Music 10566
+	Misc 3697
+	Litt 3452
+	Prod 2779
+	Games 1442
+	Rest 734
+	Stage 641
+	Sports 188
+	
+
+dev
+
+
+<DirEntry 'stage.pkl'>
+606.2236842105264
+test
+
+
+<DirEntry 'stage.pkl'>
+648.6666666666666

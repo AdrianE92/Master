@@ -48,6 +48,7 @@ if __name__ == "__main__":
         # Transform texts
         input_features = text_vectorizer.fit_transform(
             texts.values).toarray()
+        print(text_vectorizer.vocabulary_)
         # Transform labels
         label_vectorizer.fit([1,2,3,4,5,6])
         gold_classes = label_vectorizer.transform(ratings.values)
