@@ -69,14 +69,5 @@ Train:
 	Stage 641
 	Sports 188
 	
-
-dev
-
-
-<DirEntry 'stage.pkl'>
-606.2236842105264
-test
-
-
-<DirEntry 'stage.pkl'>
-648.6666666666666
+Added information to the NoReC subsection
+Added information to Preprocessing and Initial Experiments

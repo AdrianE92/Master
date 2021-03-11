@@ -40,17 +40,16 @@ The Yelp Review dataset \cite{zhang2016characterlevel} consists of more than 500
 %NoReC
 %In contrast it's a multidomain dataset
 
-\subsection{NoReC}
+\subsection{NoReC} \label{NoReC}
 The Norwegian Review Corpus (NoReC) is a dataset containing more than 43,000 full-text reviews from Norwegian news sources \cite{VelOvrBer18}.\\
-NoReC covers a range of different domains, including literature, movies, video games, restaurants, music, and theater, in addition to product reviews across a range of categories. Each review is labeled with a score ranging from 1-6, provided by the review author. NoReC was primarily created for training and evaluating models for document-level sentiment analysis, making it ideal for testing differences between domains on a document-level. The dataset has a good spread between scores, with 3, 4, and 5 being the most frequent. The spread makes sense, as it usually takes something particularly bad to give a score of 1 or 2 or something extraordinary to give a score of 6. Figure \ref{fig:ratings} shows a distribution of the ratings. Looking at the distributions of the categories, we can see from table \ref{tab:cat_dist} that the categories 'screen' and 'music' is the most represented by far. One of the reasons for this is that the different sources label their categories differently. Upon further inspection, we can see from figure \ref{fig:screen} and figure \ref{fig:music} that these cover a variety of different categories from the different sources (I have removed the categories 'utenriks', 'kjendis' and 'nyheter' from figure \ref{fig:screen} because these represented one, four and one reviews respectively). The dataset mainly cover the timespan 2003-2019, but it does contain a handful of reviews dating as far back as 1998. To make up for how language changes over time, 
+NoReC covers a range of different domains, including literature, movies, video games, restaurants, music, and theater, in addition to product reviews across a range of categories. Each review is labeled with a score ranging from 1-6, provided by the review author. NoReC was primarily created for training and evaluating models for document-level sentiment analysis, making it ideal for testing differences between domains on a document-level. The dataset has a good spread between scores, with 3, 4, and 5 being the most frequent. The spread makes sense, as it usually takes something particularly bad to give a score of 1 or 2 or something extraordinary to give a score of 6. Figure \ref{fig:ratings} shows a distribution of the ratings. Looking at the distributions of the categories, we can see from table \ref{tab:cat_dist} that the categories 'screen' and 'music' is the most represented by far. One of the reasons for this is that the different sources label their categories differently. Upon further inspection, we can see from figure \ref{fig:screen} and figure \ref{fig:music} that these cover a variety of different categories from the different sources (I have removed the categories 'utenriks', 'kjendis' and 'nyheter' from figure \ref{fig:screen} because these represented one, four and one reviews respectively). The dataset mainly cover the timespan 2003-2019, but it does contain a handful of reviews dating as far back as 1998. To make up for how language changes over time, the reviews were first sorted by date from old to new. Next, they were divided into 80\% for training data, 10\% for development data and 10\% for test data. In a real world scenario, a model trained on this data is more likely to be applied on newer reviews, so by training on the oldest data and finetuning on newer data, it takes effects like shifts in vocabulary over time into account. As we can see from table \ref{tab:avglen} this also affects the average length of reviews. From this table I would namely like to mention the sports category, as this has a significant decrease of average length in the development and test set. As we will see later, this also drastically affects the accuracy of the model when testing on the sports domain.
 %pretraining/finetuning can be seen as DA
 
-%Distribution of domains
-%Get more specific numbers
 %Transition into domain adaptation
 %Set up tables with counts etc
 %Get more statistics
 %Mention NoReC_fine
+%Number of reviews over time
 \begin{table}[]
 	\centering
 	\begin{tabular}{@{}ll@{}}
@@ -86,6 +85,7 @@ NoReC covers a range of different domains, including literature, movies, video g
 		\end{tabular}%
 	}
 	\caption{Average number of tokens per review for each domain in each split}
+	\label{tab:avglen}
 \end{table}
 \begin{figure}[h!]
 	\centering
