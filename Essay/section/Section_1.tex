@@ -13,7 +13,7 @@ You can use SA on different levels of text. Document-level SA is the task of cla
 Sentence-level SA looks at each sentence as positive, negative, or neutral, sometimes with different intensities. When looking at the sentences in a document, there are different levels of subjectivity that can be observed. Some sentences will only state a fact like "The restaurant serves Italian food", while others contain subjective opinions like "The restaurant closes too early". The subjectivity of sentences can affect the intensity, as a sentence based on an opinion or a certain belief usually indicates a stronger intensity than stating a fact.\\%
 Aspect-based SA is different than the two other approaches. Instead of classifying a word, sentence, or document as either positive or negative, aspect-based SA is tasked with identifying different aspects associated with a target \cite{pontiki-etal-2016-semeval}. One of the main contributions of aspect-based SA is that in addition to learning whether a review is positive or negative, you also learn which aspects of the review that made it so. If we're looking at a review for a hotel, we could retrieve information like "The breakfast was good", "They never made our bed". With information like this, we can assign the aspect, food, of the target, hotel, has a positive polarity. Likewise, the aspect, service - room, of the target, hotel, has a negative polarity. Being able to extract features like this instead of just "The hotel got a score of 3", is very valuable to most businesses since many consumers share their experiences with products online.\\\\
 As of today, there are two main approaches to SA, the lexicon-based approach and the machine learning approach. The lexicon-based approach is mostly used on a document-level or sentence-level and uses a lexicon with words or multiword terms. These are usually tagged with sentiment (positive or negative) and sometimes with different intensities (very positive, slightly negative, etc.). Given the word or multiword terms, you can further calculate the sentence's value and then the entire document. One way to do this is by assigning each word a score with either positive or negative numbers while taking negation into account. For example, "The movie was not excellent" should yield a higher score than "The movie was not good", as a strongly polarized word usually reflects a somewhat mixed opinion \cite{taboada-etal-2011-lexicon}. One of the benefits of lexicon-based SA is that you don't have any need for labeled data, as the lexicon is pre-defined, and that you get some robustness when applying it on different domains if the lexicon is well-made \cite{taboada-etal-2011-lexicon}.\\
-The machine learning approach can create a model from a labeled training dataset and then apply it to the target data through standard machine learning methods \cite{pang-etal-2002-thumbs}, vectorization \cite{Peters:2018, mikolov2013efficient, pennington2014glove} or use a premade model and fine-tuning it on the target data \cite{DBLP:journals/corr/abs-1810-04805}. The aforementioned machine learning approaches use unsupervised, semi-supervised, and supervised learning. What they all have in common is that they don't reference any lexicon with pre-defined sentiments. You train an algorithm on graded reviews and then have it predict the grade given to unseen reviews. Much like the lexicon-based approach, machine learning is done on both document-level and sentence-level SA.\\
+The machine learning approach can create a model from a labeled training dataset and then apply it to the target data through standard machine learning methods \cite{pang-etal-2002-thumbs}, vectorization \cite{Peters:2018, mikolov2013efficient, pennington2014glove} or use a premade model and fine-tuning it on the target data \cite{devlin-etal-2019-bert}. The aforementioned machine learning approaches use unsupervised, semi-supervised, and supervised learning. What they all have in common is that they don't reference any lexicon with pre-defined sentiments. You train an algorithm on graded reviews and then have it predict the grade given to unseen reviews. Much like the lexicon-based approach, machine learning is done on both document-level and sentence-level SA.\\
 One final approach that has been used for all granularities of SA is a hybrid between the machine learning and lexicon-based approach \cite{zhang2011combining}, where you first train an algorithm on labeled data before comparing the results with a lexicon to improve accuracy. This approach can also be used for aspect-based SA \cite{brun2016xrce}.
 One of the original challenges with SA was that sentiment is rarely identifiable by keywords alone \cite{pang-etal-2002-thumbs}. When humans are presented with the task of selecting a set of keywords to tell whether a movie review is positive or negative, our intuition often leads us towards words like "horrible", "boring", and "sucks" for negative reviews and "excellent", "thrilling" and "amazing" for positive reviews. As it turns out, selecting words like these gives us a much lower accuracy than if we train a model on labeled reviews, letting the model figure out which words are important. For my thesis, I will only focus on document-level sentiment analysis. In the next section, I will discuss some of the most popular datasets for document-level sentiment analysis.
 %Transition into 1.3 I will only focus on document level.
@@ -40,9 +40,19 @@ The Yelp Review dataset \cite{zhang2016characterlevel} consists of more than 500
 %NoReC
 %In contrast it's a multidomain dataset
 
-\subsection{NoReC} \label{NoReC}
+\section{NoReC} \label{NoReC}
 The Norwegian Review Corpus (NoReC) is a dataset containing more than 43,000 full-text reviews from Norwegian news sources \cite{VelOvrBer18}.\\
-NoReC covers a range of different domains, including literature, movies, video games, restaurants, music, and theater, in addition to product reviews across a range of categories. Each review is labeled with a score ranging from 1-6, provided by the review author. NoReC was primarily created for training and evaluating models for document-level sentiment analysis, making it ideal for testing differences between domains on a document-level. The dataset has a good spread between scores, with 3, 4, and 5 being the most frequent. The spread makes sense, as it usually takes something particularly bad to give a score of 1 or 2 or something extraordinary to give a score of 6. Figure \ref{fig:ratings} shows a distribution of the ratings. Looking at the distributions of the categories, we can see from table \ref{tab:cat_dist} that the categories 'screen' and 'music' is the most represented by far. One of the reasons for this is that the different sources label their categories differently. Upon further inspection, we can see from figure \ref{fig:screen} and figure \ref{fig:music} that these cover a variety of different categories from the different sources (I have removed the categories 'utenriks', 'kjendis' and 'nyheter' from figure \ref{fig:screen} because these represented one, four and one reviews respectively). The dataset mainly cover the timespan 2003-2019, but it does contain a handful of reviews dating as far back as 1998. To make up for how language changes over time, the reviews were first sorted by date from old to new. Next, they were divided into 80\% for training data, 10\% for development data and 10\% for test data. In a real world scenario, a model trained on this data is more likely to be applied on newer reviews, so by training on the oldest data and finetuning on newer data, it takes effects like shifts in vocabulary over time into account. As we can see from table \ref{tab:avglen} this also affects the average length of reviews. From this table I would namely like to mention the sports category, as this has a significant decrease of average length in the development and test set. As we will see later, this also drastically affects the accuracy of the model when testing on the sports domain.
+NoReC covers a range of different domains, including literature, movies, video games, restaurants, music, and theater, in addition to product reviews across a range of categories. Each review is labeled with a score ranging from 1-6, provided by the review author. NoReC was primarily created for training and evaluating models for document-level sentiment analysis, making it ideal for testing differences between domains on a document-level.\\
+\subsection{Distribution of categories and ratings} 
+The dataset has a good spread between scores, with 3, 4, and 5 being the most frequent. The spread makes sense, as it usually takes something particularly bad to give a score of 1 or 2 or something extraordinary to give a score of 6. Figure \ref{fig:ratings} shows a distribution of the ratings.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{img/ratings_new}
+	\caption{Distribution of ratings in the NoReC dataset}
+	\label{fig:ratings}
+\end{figure}%
+Looking at the distributions of the categories, we can see from table \ref{tab:cat_dist} that the categories 'screen' and 'music' is the most represented by far. One of the reasons for this is that the different sources label their categories differently. Upon further inspection, we can see from figure \ref{fig:screen} and figure \ref{fig:music} that these cover a variety of different categories from the different sources (I have removed the categories 'utenriks', 'kjendis' and 'nyheter' from figure \ref{fig:screen} because these represented one, four and one reviews respectively). The dataset mainly cover the timespan 2003-2019, but it does contain a handful of reviews dating as far back as 1998. To make up for how language changes over time, the reviews were first sorted by date from old to new. Next, they were divided into 80\% for training data, 10\% for development data and 10\% for test data. In a real world scenario, a model trained on this data is more likely to be applied on newer reviews, so by training on the oldest data and finetuning on newer data, it takes effects like shifts in vocabulary over time into account. As we can see from table \ref{tab:avglen} this also affects the average length of reviews. From this table I would namely like to mention the sports category, as this has a significant decrease of average length in the development and test set. As we will see later, this also drastically affects the accuracy of the model when testing on the sports domain.\\
+Further, I wanted to see whether there was any significant difference in the tokens within each domain. To do so, I ran a Proxy A-Distance approximation \cite{ganin2016domainadversarial} by modifying some of the code found here [Link Github?]. Proxy A-Distance (PAD) aims to approximate the similarity between domains, by running a learning algorithm looking at the divergence between a source and a target. To avoid memory issues, I took the 55.000 most frequent tokens from each domain, excluding Games, Restaurants, Stage and Sports. Figure \ref{fig:pad} indicates that the distance between the domains are rather small. While this alone gives us very little additional information, there might be some merit to investigate whether there is some corellation between the PAD and the accuracy for the domains. However, since the accuracy on domains is largely dependent on the size of the domain, this might not tell us anything. [???]
 %pretraining/finetuning can be seen as DA
 
 %Transition into domain adaptation
@@ -59,39 +69,87 @@ NoReC covers a range of different domains, including literature, movies, video g
 	\end{tabular}
 	\caption{Distribution of languages}
 \end{table}
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
 \begin{table}[]
 	\centering
-	\resizebox{\columnwidth}{!}{%
-	\begin{tabular}{@{}llllllllll@{}}
+	\begin{tabular}{@{}lrrrr@{}}
 		\toprule
-		& Screen                     & Music                      & Misc                      & Literature                & Products                  & Games                     & Rest.                   & Stage                   & Sports                  \\ \midrule
-		\multicolumn{1}{l|}{Reviews} & \multicolumn{1}{c}{14,296} & \multicolumn{1}{c}{13,203} & \multicolumn{1}{c}{4,618} & \multicolumn{1}{c}{4,312} & \multicolumn{1}{c}{3,469} & \multicolumn{1}{c}{1,798} & \multicolumn{1}{c}{914} & \multicolumn{1}{c}{763} & \multicolumn{1}{c}{232}
-	\end{tabular}%
-	}
+		& \multicolumn{1}{l}{Train} & \multicolumn{1}{l}{Dev} & \multicolumn{1}{l}{Test} & \multicolumn{1}{l}{Total} \\ \midrule
+		Screen      & 11,439                    & 1,429                   & 1,429                    & 14,297                    \\
+		Music       & 10,565                    & 1,320                   & 1,319                    & 13,204                    \\
+		Misc        & 3,696                     & 462                     & 461                      & 4,619                     \\
+		Literature  & 3,451                     & 432                     & 430                      & 4,313                     \\
+		Products    & 2,778                     & 347                     & 345                      & 3,470                     \\
+		Games       & 1,411                     & 179                     & 179                      & 1,799                     \\
+		Restaurants & 733                       & 91                      & 91                       & 915                       \\
+		Stage       & 613                       & 76                      & 75                       & 764                       \\
+		Sports      & 187                       & 24                      & 22                       & 233                       \\ \bottomrule
+	\end{tabular}
+	\caption{Distribution of reviews across train, test and development sets.}
+	\label{tab:split_dist}
+\end{table}
+\begin{table}[]
+	\centering
+		\begin{tabular}{@{}lrrrrrrrrr@{}}
+			\toprule
+			& \multicolumn{1}{l}{}        & \multicolumn{4}{c}{Avg. Rating}                                                                          & \multicolumn{4}{c}{Avg. Tokens}                                                                          \\ \cmidrule(l){3-10} 
+			& \multicolumn{1}{l}{Reviews} & \multicolumn{1}{l}{Train} & \multicolumn{1}{l}{Dev} & \multicolumn{1}{l}{Test} & \multicolumn{1}{l}{All} & \multicolumn{1}{l}{Train} & \multicolumn{1}{l}{Dev} & \multicolumn{1}{l}{Test} & \multicolumn{1}{l}{All} \\ \midrule
+			Screen      & 14,296                      & 3.86                      & 3.90                    & 3.98                     & 3.91                    & 422.2                     & 500.2                   & 546.2                    & 489.5                   \\
+			Music       & 13,203                      & 4.14                      & 4.28                    & 4.20                     & 4.20                    & 325.9                     & 406.5                   & 385.7                    & 372.7                   \\
+			Misc        & 4,618                       & 4.41                      & 4.37                    & 4.43                     & 4.40                    & 516.3                     & 540.7                   & 538.4                    & 531.8                   \\
+			Literature  & 4,312                       & 4.38                      & 4.45                    & 4.50                     & 4.44                    & 445.5                     & 584.4                   & 579.9                    & 533.9                   \\
+			Products    & 3,469                       & 4.59                      & 4.60                    & 4.63                     & 4.61                    & 981.0                     & 1082.5                  & 1008                     & 1023.8                  \\
+			Games       & 1,798                       & 4.25                      & 4.27                    & 4.39                     & 4.30                    & 569.4                     & 628.8                   & 740.6                    & 646.3                   \\
+			Restaurants & 914                         & 4.14                      & 4.26                    & 4.07                     & 4.16                    & 789.9                     & 832.8                   & 894.7                    & 839.1                   \\
+			Stage       & 763                         & 4.49                      & 4.51                    & 4.58                     & 4.53                    & 567.0                     & 606.2                   & 648.6                    & 607.3                   \\
+			Sports      & 232                         & 3.68                      & 3.54                    & 3.63                     & 3.62                    & 503.9                     & 165.4                   & 266.9                    & 312.1                   \\ \bottomrule
+		\end{tabular}
 	\caption{The distribution of categories in the NoReC dataset}
 	\label{tab:cat_dist}
+\end{table}
+
+\begin{table}[]
+	\centering
+	\begin{tabular}{@{}lrrrr@{}}
+		\toprule
+		& \multicolumn{4}{c}{Unique Tokens}                                                                        \\ \cmidrule(l){2-5} 
+		& \multicolumn{1}{l}{Train} & \multicolumn{1}{l}{Dev} & \multicolumn{1}{l}{Test} & \multicolumn{1}{l}{All} \\ \midrule
+		Screen      & 209,978                   & 55,354                  & 57,741                   & 235,715                 \\
+		Music       & 161,948                   & 47,267                  & 44,599                   & 183,473                 \\
+		Misc        & 110,423                   & 30,660                  & 30,692                   & 124,762                 \\
+		Literature  & 93,467                    & 28,888                  & 29,055                   & 107,465                 \\
+		Products    & 92,910                    & 27,682                  & 25,339                   & 106,781                 \\
+		Games       & 47,448                    & 14,147                  & 15,660                   & 55,605                  \\
+		Restaurants & 37,235                    & 10,268                  & 10,325                   & 40,266                  \\
+		Stage       & 35,109                    & 8,803                   & 9,375                    & 40,602                  \\
+		Sports      & 8,076                     & 763                     & 1,362                    & 8,741                   \\ \bottomrule
+	\end{tabular}
+	\caption{Number of unique tokens in the domains and splits}
 \end{table}
 \begin{table}[]
 	\centering
 	\resizebox{\columnwidth}{!}{%
-		\begin{tabular}{@{}lccccccccc@{}}
-			\toprule
-			& \multicolumn{1}{l}{Screen} & \multicolumn{1}{l}{Music} & \multicolumn{1}{l}{Misc} & \multicolumn{1}{l}{Literature} & \multicolumn{1}{l}{Products} & \multicolumn{1}{l}{Games} & \multicolumn{1}{l}{Rest.} & \multicolumn{1}{l}{Stage} & \multicolumn{1}{l}{Sports} \\ \midrule
-			\multicolumn{1}{l|}{Train} & 422.2                      & 325.9                     & 516.3                    & 445.5                          & 981                          & 569.4                     & 789.9                     & 567                       & 503.9                      \\
-			\multicolumn{1}{l|}{Dev}   & 500.2                      & 406.5                     & 540.7                    & 584.4                          & 1082.5                       & 628.8                     & 832.8                     & 606.2                     & 165.4                      \\
-			\multicolumn{1}{l|}{Test}  & 546.2                      & 385.7                     & 538.4                    & 579.9                          & 1008                         & 740.6                     & 894.7                     & 648.6                     & 266.9                     
-		\end{tabular}%
+\begin{tabular}{@{}lrrrrrrrrr@{}}
+	\toprule
+	& \multicolumn{1}{l}{Screen} & \multicolumn{1}{l}{Music} & \multicolumn{1}{l}{Misc} & \multicolumn{1}{l}{Literature} & \multicolumn{1}{l}{Products} & \multicolumn{1}{l}{Games} & \multicolumn{1}{l}{Rest.} & \multicolumn{1}{l}{Stage} & \multicolumn{1}{l}{Sports} \\ \midrule
+	Screen      & -                          & &                 &                    &       &       &          &       &                       \\
+	Music       & 15.40                      & -                         &       &         &         &     &      &           &          \\
+	Misc        & 18.82                      & 18.69                     & -                        &        &       &    &    &     &         \\
+	Literature  & 16.98                      & 15.02                     & 22.04                    & - & &  &   &    &      \\
+	Products    & 9.55                      & 10.04                     & 11.84                    & 11.61                          & - & &  &       &  \\
+	Games       & 5.75                      & 6.15                     & 8.30                    & 8.51                          & 7.85                        & -                         &    &  &  \\
+	Restaurants & 7.49                      & 8.47                     & 11.38                    & 11.72                          & 10.45                        & 8.74                     & -                         & &  \\
+	Stage       & 10.37                      & 11.20                     & 16.14                    & 16.15                          & 10.44                        & 10.25                     & 14.28                     & -                         &    \\
+	Sports      & 2.51                      & 3.04                     & 4.25                    & 4.69                          & 4.35                        & 7.90                     & 8.38                     & 8.75                     & -                          \\ \bottomrule
+\end{tabular}
 	}
-	\caption{Average number of tokens per review for each domain in each split}
+	\caption{Percentage of tokens overlapping between domains}
 	\label{tab:avglen}
 \end{table}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.5]{img/ratings_new}
-	\caption{Distribution of ratings in the NoReC dataset}
-	\label{fig:ratings}
+	\includegraphics[scale=0.5]{img/proxy-a-dist-norec}
+	\caption{Heatmap showing Proxy-A Distance of domains in NoReC}
+	\label{fig:pad}
 \end{figure}%
 \begin{figure}[h!]
 	\centering
@@ -140,7 +198,7 @@ Static word embeddings had a breakthrough when Google published their Word2Vec a
 
 \subsection{Contextualized Embeddings}
 Contextualized embeddings were the next step in pre-training language models. In 2018, Embeddings from Language Models (ELMo) was published \cite{Peters:2018}. Where we previously assigned a vector to each word, ELMo looks at the context the word appears in. If we take the word "fall", this could have multiple meanings. One being the verb "to fall", another being the time of year as in "autumn". With traditional embeddings, we would learn the vectors based on a dataset and assign only one vector to "fall". One of the revolutionary things that ELMo did is that each token is assigned a representation that is a function of the entire input sentence. In other words, the embedding assigned to "fall" is calculated from the sentence it appears in. The way ELMo does this is by using a bidirectional long short-term memory (BiLSTM) RNN to calculate the probability of both previous and future words in the sentence before returning the contextualized embedding.\\
-Not long after the release of ELMO, Bidirectional Encoder Representations from Transformers (BERT) was published \cite{DBLP:journals/corr/abs-1810-04805}. Upon its release in 2018, it obtained state-of-the-art results on eleven NLP tasks in various fields, using Google's transformer architecture \cite{DBLP:journals/corr/VaswaniSPUJGKP17}. Whereas previous language representation models using transformers had been unidirectional \cite{radford2018improving}, BERT uses attention mechanisms to learn the contextual relations between all words in a sentence. The way BERT does this is by using a "masked language model" (MLM) pre-training objective. First, the model replaces some of the words in the dataset with the [MASK] token, and then the model attempts to predict the actual value of the token, based on the context provided by the unmasked words in the sentence. Next, the model does "next sentence prediction" (NSP). By pairing 50\% of the sentences in the dataset, BERT is tasked with predicting whether the next sentence in a document is the next sentence, with a 50\% chance it will be. This has proven very useful for tasks like question answering, where models are required to produce fine-grained output at the token level. Upon the release of the paper, Google also released the models used in the paper, BERT$_{BASE}$ and BERT$_{LARGE}$. These are both incredibly large models with 110M and 340M parameters, respectively. Training a model of this size requires an enormous amount of computational power, energy, and time. By making both the code and pre-trained models from the paper publicly available, it became possible for small research groups with limited computational power and funding to fine-tune BERT and apply it as they saw fit.
+Not long after the release of ELMO, Bidirectional Encoder Representations from Transformers (BERT) was published \cite{devlin-etal-2019-bert}. Upon its release in 2018, it obtained state-of-the-art results on eleven NLP tasks in various fields, using Google's transformer architecture \cite{DBLP:journals/corr/VaswaniSPUJGKP17}. Whereas previous language representation models using transformers had been unidirectional \cite{radford2018improving}, BERT uses attention mechanisms to learn the contextual relations between all words in a sentence. The way BERT does this is by using a "masked language model" (MLM) pre-training objective. First, the model replaces some of the words in the dataset with the [MASK] token, and then the model attempts to predict the actual value of the token, based on the context provided by the unmasked words in the sentence. Next, the model does "next sentence prediction" (NSP). By pairing 50\% of the sentences in the dataset, BERT is tasked with predicting whether the next sentence in a document is the next sentence, with a 50\% chance it will be. This has proven very useful for tasks like question answering, where models are required to produce fine-grained output at the token level. Upon the release of the paper, Google also released the models used in the paper, BERT$_{BASE}$ and BERT$_{LARGE}$. These are both incredibly large models with 110M and 340M parameters, respectively. Training a model of this size requires an enormous amount of computational power, energy, and time. By making both the code and pre-trained models from the paper publicly available, it became possible for small research groups with limited computational power and funding to fine-tune BERT and apply it as they saw fit.
 \subsection{Fine-tuning}
 While contextualized embeddings can bre trained from scratch, it's more common to use the published models because of the aforementioned time, power and energy it requires. Using pre-trained embeddings in this way, is actually an instance of transfer learning. When applying the pre-trained embeddings, you can also fine-tune them to a specific task. Fine-tuning is the task of training a pre-trained model on a new dataset, which makes it an instance of domain adaptation. When we fine-tune a model, we have a few different options. First of all, we want to make sure that the model remembers the important information it was originally trained on. One way to avoid this, is to freeze different combinations of layers as we train our model. Freezing the layers means that we only allow some of the parameters to change during fine-tuning, which in turn forces the model to remember some of the original information. One approach to this is gradual unfreezing, where all layers are frozen except for the last one, which is then trained for one epoch. Next we unfreeze the the second to last layer and train the model for one epoch on the last two layers. This is repeated until all layers are unfrozen and then the model is trained until convergence. This has successfully been applied in ULMFiT \cite{howard-ruder-2018-universal}. Another concept in fine-tuning which can also be seen in the ULMFiT paper is discriminative fine-tuning. The intuition here is that you want to start out with a low learning rate for the last layer because this holds the most general information, then rapidly increase the learning rate, before gradually reducing it until convergance. This will adjust how much the different layers learn, as they all hold different information. 
 %(Train the entire architecture - Freezing some layers / gradually unfreeze layers - Freeze all layers) (Fine-tuning can be used for domain adaptation)

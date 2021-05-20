@@ -475,3 +475,364 @@ Test products
 Train screen
 Test screen
 0.543037088873338
+
+
+--------------------
+
+Unique Tokens
+Games train: 47452 	Games dev: 14150 	Games test: 15663
+Sports train: 8079 	Sports dev: 764 	Sports test: 1363
+Rest train: 37234 	Rest dev: 10271 	Rest test: 10330
+Screen train: 209979 	Screen dev: 55360 	Screen test: 57743
+Music train: 161954 	Music dev: 47269 	Music test: 44604
+Misc train: 110420 	Misc dev: 30666 	Misc test: 30697
+Prod train: 92283	Prod dev: 27549		Prod test: 25174
+Stage train: 35113	Stage dev: 8805		Stage test: 9379
+Lit train: 93477	Lit dev: 28891		Lit test: 29061
+
+Creating games_total
+56557
+Creating sports_total
+8842
+Creating rest_total
+42435
+Creating screen_total
+241535
+Creating music_total
+188368
+Creating misc_total
+126833
+Creating prod_total
+107379
+Creating stage_total
+40602
+Creating lit_total
+109105
+
+Sports common tokens: 
+Screen: 6141
+Music: 5852
+Misc: 5678
+Lit: 5455
+Prod: 5031
+Games: 5088
+Rest: 4110
+Stage: 4318
+
+Stage common tokens: 
+Screen: 28791
+Music: 25227
+Misc: 26817
+Lit: 24011
+Prod: 15424
+Games: 16092
+Rest: 11589
+
+Rest common tokens: 
+Screen: 20831
+Music: 19080
+Misc: 18877
+Lit: 17406
+Prod: 15430
+Games: 13237
+
+Games common tokens: 
+Screen: 34007
+Music: 28601
+Misc: 28214
+Lit: 25546
+Prod: 22750
+
+Prod common tokens: 
+Screen: 32977
+Music: 29348
+Misc: 27583
+Lit: 25009
+
+Lit common tokens: 
+Screen: 58936
+Music: 44291
+Misc: 51658
+
+Misc common tokens: 
+Screen: 68705
+Music: 58464
+
+Music common tokens: 
+Screen: 65821
+
+
+
+Screen/Music:
+64,579
+------
+419,187
+15.40
+
+Screen/Misc:
+67,855
+---------
+360,477
+18.82
+
+Screen/Literature:
+58,273
+--------
+343,180
+16.98
+
+Screen/Products:
+32,729
+--------
+342,496
+9.556
+
+Screen/Games:
+16,761
+-------
+291,320
+5.753
+
+Screen/Restaurants:
+20,688
+--------
+275,981
+7.496
+
+Screen/Stage:
+28,654
+-------
+276,317
+10.37
+
+Screen/Sports:
+6,141
+-------
+244,456
+2.512
+------------------------------------------------------------------
+Music/Misc
+57,638
+-------
+308,235
+18.69
+
+Music/Literature
+43,726
+--------
+290,938
+15.02
+
+Music/Products
+29,148
+------
+290,254
+10.04
+
+Music/Games
+14,723
+-----
+239,078
+6.158
+
+Music/Restaurants
+18,952
+------
+223,739
+8.470
+
+Music/Stage
+25,108
+-------
+224,075
+11.20
+
+Music/Sports
+5,852
+-------
+192,214
+3.044
+------------------------------------------------------------------
+Misc/Literature
+51,205
+--------
+232,227
+22.04
+
+Misc/Products
+27,436
+--------
+231,543
+11.84
+
+Misc/Games
+14,972
+-------
+180,367
+8.300
+
+Misc/Restaurants
+18,781
+-------
+165,028
+11.38
+
+Misc/Stage
+26,704
+-------
+165,364
+16.14
+
+Misc/Sports
+5,678
+-----
+133,503
+4.253
+------------------------------------------------------------------
+Literature/Products
+24,880
+------
+214,246
+11.61
+
+Literature/Games
+13,890
+------
+163,070
+8.517
+
+Literature/Restaurants
+17,315
+--------
+147,731
+11.72
+
+Literature/Stage
+23,920
+-------
+148,067
+16.15
+
+Literature/Sports
+5,455
+-------
+116,206
+4.694
+------------------------------------------------------------------
+Products/Games
+12,751
+-------
+162,386
+7.852
+
+Products/Restaurants
+15,378
+------
+147,047
+10.45
+
+Products/Stage
+15,388
+------
+147,383
+10.44
+
+Products/Sports
+5,031
+------
+115,522
+4.355
+------------------------------------------------------------------
+Games/Restaurants
+8,380
+-----
+95,871
+8.740
+
+Games/Stage
+9,864
+-----
+96,207
+10.25
+
+Games/Sports
+5,088
+-----
+64,346
+5.916
+------------------------------------------------------------------
+Restaurants/Stage
+11,555
+------
+80,868
+14.28
+
+Restaurants/Sports
+4,110
+------
+49,007
+8.386
+------------------------------------------------------------------
+Stage/Sports
+4,318
+-----
+49,343
+8.750
+
+MCC:
+Screen train {1: 235, 2: 1216, 3: 2514, 4: 3825, 5: 3170, 6: 479} 
+Screen dev   {1: 29, 2: 117, 3: 339, 4: 466, 5: 426, 6: 52}
+Screen test  {1: 14, 2: 110, 3: 292, 4: 526, 5: 449, 6: 38} 
+4
+Music train {1: 88, 2: 610, 3: 1944, 4: 3509, 5: 3905, 6: 509} 10565
+Music dev   {1: 8, 2: 55, 3: 174, 4: 455, 5: 569, 6: 59}
+Music test  {1: 8, 2: 86, 3: 217, 4: 399, 5: 542, 6: 67} 13204
+5
+Misc train {1: 15, 2: 130, 3: 454, 4: 1108, 5: 1694, 6: 295} 3696
+5
+Lit train {1: 19, 2: 150, 3: 439, 4: 1078, 5: 1403, 6: 362} 3451
+5
+Prod train {1: 10, 2: 54, 3: 220, 4: 801, 5: 1380, 6: 313}
+5
+Games train {1: 10, 2: 85, 3: 224, 4: 452, 5: 552, 6: 118} 1441
+5
+Rest train {1: 1, 2: 22, 3: 135, 4: 326, 5: 209, 6: 40} 733
+4
+Stage train {1: 0, 2: 9, 3: 55, 4: 212, 5: 300, 6: 37} 613
+5
+Sports train {1: 3, 2: 24, 3: 77, 4: 28, 5: 35, 6: 20} 187
+3
+-----------DEV--------------
+
+ 11885
+Misc train {1: 2, 2: 16, 3: 59, 4: 147, 5: 204, 6: 34} 4158
+Lit train {1: 1, 2: 13, 3: 47, 4: 146, 5: 179, 6: 46} 3883
+Prod train {1: 4, 2: 9, 3: 28, 4: 92, 5: 160, 6: 54} 3125
+Games train {1: 2, 2: 6, 3: 33, 4: 51, 5: 73, 6: 14} 1620
+Rest train {1: 1, 2: 2, 3: 20, 4: 28, 5: 29, 6: 11} 824
+Stage train {1: 0, 2: 2, 3: 7, 4: 24, 5: 36, 6: 7} 689
+Sports train {1: 4, 2: 5, 3: 1, 4: 4, 5: 8, 6: 2} 211
+----------TEST---------------
+
+Misc train {1: 0, 2: 15, 3: 63, 4: 129, 5: 217, 6: 37} 4619
+Lit train {1: 2, 2: 4, 3: 51, 4: 135, 5: 196, 6: 42} 4313
+Prod train {1: 0, 2: 9, 3: 32, 4: 86, 5: 166, 6: 52} 3470
+Games train {1: 0, 2: 9, 3: 23, 4: 49, 5: 85, 6: 13} 1799
+Rest train {1: 0, 2: 4, 3: 20, 4: 39, 5: 21, 6: 7} 915
+Stage train {1: 1, 2: 1, 3: 5, 4: 23, 5: 36, 6: 9} 764
+Sports train {1: 2, 2: 5, 3: 4, 4: 4, 5: 2, 6: 5} 233
+Screen test {1: 14, 2: 110, 3: 292, 4: 526, 5: 449, 6: 38}
+4
+Music test {1: 8, 2: 86, 3: 217, 4: 399, 5: 542, 6: 67}
+5
+Misc test {1: 0, 2: 15, 3: 63, 4: 129, 5: 217, 6: 37}
+
+Lit test {1: 2, 2: 4, 3: 51, 4: 135, 5: 196, 6: 42}
+Prod test {1: 0, 2: 9, 3: 32, 4: 86, 5: 166, 6: 52}
+Games test {1: 0, 2: 9, 3: 23, 4: 49, 5: 85, 6: 13}
+Rest test {1: 0, 2: 4, 3: 20, 4: 39, 5: 21, 6: 7}
+Stage test {1: 1, 2: 1, 3: 5, 4: 23, 5: 36, 6: 9}
+Sports test {1: 2, 2: 5, 3: 4, 4: 4, 5: 2, 6: 5}
+
+
+

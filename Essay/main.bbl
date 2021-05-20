@@ -14,11 +14,19 @@ Daum{\'e}~III, H. (2007).
   Computational Linguistics}, pages 256--263, Prague, Czech Republic.
   Association for Computational Linguistics.
 
-\bibitem[Devlin et~al., 2018]{DBLP:journals/corr/abs-1810-04805}
-Devlin, J., Chang, M., Lee, K., and Toutanova, K. (2018).
-\newblock {BERT:} pre-training of deep bidirectional transformers for language
+\bibitem[Devlin et~al., 2019]{devlin-etal-2019-bert}
+Devlin, J., Chang, M.-W., Lee, K., and Toutanova, K. (2019).
+\newblock {BERT}: Pre-training of deep bidirectional transformers for language
   understanding.
-\newblock {\em CoRR}, abs/1810.04805.
+\newblock In {\em Proceedings of the 2019 Conference of the North {A}merican
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies, Volume 1 (Long and Short Papers)}, pages 4171--4186,
+  Minneapolis, Minnesota. Association for Computational Linguistics.
+
+\bibitem[Ganin et~al., 2016]{ganin2016domainadversarial}
+Ganin, Y., Ustinova, E., Ajakan, H., Germain, P., Larochelle, H., Laviolette,
+  F., Marchand, M., and Lempitsky, V. (2016).
+\newblock Domain-adversarial training of neural networks.
 
 \bibitem[Howard and Ruder, 2018]{howard-ruder-2018-universal}
 Howard, J. and Ruder, S. (2018).

@@ -71,3 +71,64 @@ Train:
 	
 Added information to the NoReC subsection
 Added information to Preprocessing and Initial Experiments
+
+TODO:
+
+
+NorBERT
+
+Se på variansen i lengden til datasettene (hvis de varierer i lengde, varierer de antakeligvis i skrivestil)
+Valg av evaluation metric (ikke helt multiclass, si at TK1 er TK6 er en 'større' feil enn TK2. Se på diskusjon i masteren til Eivind)
+	- F-Score?
+	- Mean Squared?
+Linear regression for length? Put some more research in what effect length has on accuracy
+Find tags in misc
+Given domain A, how much overlaps with domain B?
+Sum the domains and divide 
+Change Unique Tokens to Types
+
+- Mention at some point that some of the training data used for BERT might be in NoReC
+
+Take all clf for individual domains and average the prediction for a target domain
+(out of domain predictions?)
+
+
+Screen = ---- + 48,06 + 50,75 + 49,76 + 38,84 + 48,60 + 54,94 + 50,66 + 22,75
+Music  = 51,5 + ----- + 51,84 + 46,74 + 42,6  + 47,48 + 46,15 + 49,33 + 22,27
+Misc =  44,22 + 49,65 + ----- + 52,09 + 49,56 + 44,13 + 27,47 + 56,00 + 22,72
+Lit =   40,65 + 46,47 + 50,75 + ----  + 39,42 + 43,01 + 39,56 + 48    + 22,72  
+Prod =  32,82 + 41,16 + 48,37 + 45,81 + ----  + 48,04 + 23,07 + 49,33 + 9,09
+Games = 36,31 + 43,36 + 50,75 + 44,65 + 49,85 + ----  + 23,07 + 48,00 + 9,09
+Rest =  38,34 + 31,84 + 31,01 + 33,25 + 25,79 + 27,37 + ----  + 32    + 18,18
+Stage = 34,07 + 42,83 + 48,8  + 45,81 + 49,85 + 46,36 + 26,37 + ----  + 27,27
+Sports =20,22 + 15,92 + 13,44 + 11,86 + 9,56  + 12,84 + 21,97 + 6,66
+
+----------
+Screen = 51,5 + 44,22 + 40,65 + 32,82 + 36,31 + 38,34 + 34,07 + 20,22
+Music = 48,06 + 49,65 + 46,47 + 41,16 + 43,36 + 31,84 + 42,83 + 15,92
+Misc = 50,75 + 51,84 + 50,75 + 48,37 + 50,75 + 31,01 + 48,8 + 13,44
+Lit = 49,76 + 46,74 + 52,09 + 45,81 + 44,65 + 33,25 + 45,81 + 11,86
+Prod = 38,84 + 42,6 + 49,56 + 39,42 + 49,85 + 25,79 + 49,85 + 9,56
+Games = 48,6 + 47,48 + 44,13 + 43,01 + 48,04 + 27,37 + 46,36 + 12,84
+Rest = 54,94 + 46,15 + 27,47 + 39,56 + 23,07 + 23,07 + 26,37 + 21,97
+Stage = 50,66 + 49,33 + 56 + 48 + 49,33 + 48 + 32 + 6,66
+Sports = 22,75 + 22,27 + 22,72 + 22,72 + 9,09 + 9,09 + 18,18 + 27,27
+
+37,26 + 39,91 + 43,21 + 41,24 + 38,18 + 39,72 + 32,82 + 42,49 + 19,26
+--------------------------------------
+Legge til et spesifikt dataset under "Twitter" (They say they've released the dataset from SemEval 2013, but I can't seem to find it)
+More descriptive section headings?
+--------------------------------------
+
+DONE:
+Gjøre Table 1.2 vertikal og slå sammen
+Average rating for forskjellige datasett
+Add 'All' column
+Right align tables and have the same amount of decimals
+Remove vertical bars from tables
+Antall unike tokens
+Overlapp av tokens
+Proxy-A distance:
+	Do Screen/Screen for sanity check
+	Write up domain similarity
+

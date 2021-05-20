@@ -34,7 +34,8 @@ Test
 nor_tokenizer = nltk.data.load('tokenizers/punkt/norwegian.pickle')
 train = os.scandir("../norec/data//train/")
 dev = os.scandir("../norec/data/dev/")
-test = os.scandir("../norec/data/test/")
+#test = os.scandir("../norec/data/test/")
+test = "./data/test/sports.pkl"
 metadata = "../norec/data/metadata.json"
 
 train_rating = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
@@ -46,7 +47,24 @@ with open(metadata, "r", encoding='utf-8') as f:
     meta = json.loads(data)
 cats = {}
 sources = {}
+data = pd.read_pickle(test)
+data.columns = ['rating', 'text']
+texts = data.text.to_list()
+texts2 = [""] * len(texts)
+print(texts)
+for i in range(len(texts)):
+    counter = 0
+    tmp = texts[i].split(', ')
+    for j in tmp:
+        counter += 1
+        if counter == 256:
+            continue
+        word = j.strip("[]'")
+        texts2[i] = texts2[i] + word + " "
+    #print(texts2[i])
 
+print(texts2)
+"""
 for i in meta:
     #print(meta[i]["category"])
     if not meta[i]["category"] in cats:
@@ -64,7 +82,6 @@ for i in meta:
         sources[meta[i]["source"]] = 0
     else:
         sources[meta[i]["source"]] += 1
-"""
 Category: Rating
 Total: Rating
 
@@ -121,7 +138,6 @@ for i in dev:
 print("dev complete")
 path = "../norec/pre_proc_data/train/games/000378.csv"
 data = pd.read_csv(path, header=0)
-"""
 lngs = ["nb", "nn"]
 ratings = ["1", "2", "3", "4", "5", "6"]
 source = [i for i in sources.keys()]
@@ -131,6 +147,7 @@ lng_values = [i for i in train_lng.values()]
 print(rt_values)
 print(lng_values)
 print(train_total)
+"""
 
 """
 tot = 28158
@@ -145,9 +162,9 @@ tot = 3513
 test = 25, 206, 576, 1147, 1355, 204
 test = 3443, 70
 
-"""
 plt.bar(source, source_values)
 #plt.bar(ratings, rt_values)
 #plt.bar(lngs, lng_values)
 plt.show()
 plt.close()
+"""
