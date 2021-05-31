@@ -34,10 +34,9 @@ Test
 nor_tokenizer = nltk.data.load('tokenizers/punkt/norwegian.pickle')
 train = os.scandir("../norec/data//train/")
 dev = os.scandir("../norec/data/dev/")
-#test = os.scandir("../norec/data/test/")
-test = "./data/test/sports.pkl"
+test = os.scandir("../norec/data/test/")
+#test = "./data/test/sports.pkl"
 metadata = "../norec/data/metadata.json"
-
 train_rating = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
 train_lng = {'nb': 0, 'nn': 0}
 train_total = 0
@@ -47,6 +46,7 @@ with open(metadata, "r", encoding='utf-8') as f:
     meta = json.loads(data)
 cats = {}
 sources = {}
+"""
 data = pd.read_pickle(test)
 data.columns = ['rating', 'text']
 texts = data.text.to_list()
@@ -64,6 +64,7 @@ for i in range(len(texts)):
     #print(texts2[i])
 
 print(texts2)
+"""
 """
 for i in meta:
     #print(meta[i]["category"])
@@ -84,20 +85,20 @@ for i in meta:
         sources[meta[i]["source"]] += 1
 Category: Rating
 Total: Rating
-
-print(cats)
+"""
+#print(cats)
 for i in train:
     category = meta[i.name[:-4]]["category"]
     rating = meta[i.name[:-4]]["rating"]
     with open(i, "r", encoding='utf-8') as f:
         data = f.read()
         toks = nltk.word_tokenize(data, language="norwegian")
-        toks = [j.lower() for j in toks]
+        #toks = [j.lower() for j in toks]
         toks = [toks]
         toks.insert(0, str(rating))
 
 
-    with open("../norec/pre_proc_data/train/" + category + "/" + i.name[:-4] + ".csv", "w+", encoding='utf-8') as f:
+    with open("../norec/pad/train/" + category + "/" + i.name[:-4] + ".csv", mode="w", encoding='utf-8') as f:
         wr = csv.writer(f)
         wr.writerow(header)
         wr.writerow(toks)
@@ -110,11 +111,11 @@ for i in test:
     with open(i, "r", encoding='utf-8') as f:
         data = f.read()
         toks = nltk.word_tokenize(data, language="norwegian")
-        toks = [j.lower() for j in toks]
+        #toks = [j.lower() for j in toks]
         toks = [toks]
         toks.insert(0, str(rating))
 
-    with open("../norec/pre_proc_data/test/" + category + "/" + i.name[:-4] + ".csv", "w+", encoding='utf-8') as f:
+    with open("../norec/pad/test/" + category + "/" + i.name[:-4] + ".csv", mode="w", encoding='utf-8') as f:
         wr = csv.writer(f)
         wr.writerow(header)
         wr.writerow(toks)
@@ -127,15 +128,16 @@ for i in dev:
     with open(i, "r", encoding='utf-8') as f:
         data = f.read()
         toks = nltk.word_tokenize(data, language="norwegian")
-        toks = [j.lower() for j in toks]
+        #toks = [j.lower() for j in toks]
         toks = [toks]
         toks.insert(0, str(rating))
 
-    with open("../norec/pre_proc_data/dev/" + category + "/" + i.name[:-4] + ".csv", "w+", encoding='utf-8') as f:
+    with open("../norec/pad/dev/" + category + "/" + i.name[:-4] + ".csv", mode="w", encoding='utf-8') as f:
         wr = csv.writer(f)
         wr.writerow(header)
         wr.writerow(toks)
 print("dev complete")
+"""
 path = "../norec/pre_proc_data/train/games/000378.csv"
 data = pd.read_csv(path, header=0)
 lngs = ["nb", "nn"]
