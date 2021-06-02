@@ -5,7 +5,7 @@ import json
 import csv
 import pandas as pd
 import stanza
-stanza.download('no')
+#stanza.download('no')
 nlp = stanza.Pipeline(lang='no', processors='tokenize')
 train = os.scandir("./pad/train/")
 dev = os.scandir("./pad/dev/")
@@ -57,10 +57,11 @@ for j in cats:
 
 """
 print('train')
+counter = 0
 for i in train:
     rev = pd.read_pickle(i)
     texts = rev['text']
-    if i.name == "literature.pkl":
+    with open(i.name[:-3] + 'txt', mode='w', encoding='utf-8') as f:
         for j in texts:
             lit = ""
             words = j.split(', ')
@@ -70,20 +71,31 @@ for i in train:
                     lit = lit[:-1] + word + " "
                 else:
                     lit = lit + word + " "
-            """
-            print(lit)
-            """
-            doc = nlp(lit)
-            print(lit)
-            #print([sent.text for sent in doc.sentences])
-            for i, sentence in enumerate(doc.sentences):
-                print(*[f'id: {token.id}\ttext: {token.text}' for token in sentence.tokens], sep='\n')
-            """
-            #print([sentence.text for sentence in doc.sentences])
-            for i in doc.sentences:
-                print(i.text)
-            """
-            exit()
+
+            #print(lit)
+            try:
+                doc = nlp(lit)
+            except Exception:
+                continue
+            for sentence in doc.sentences:
+                for token in sentence.tokens:
+                    f.write(token.text + ' ')
+                counter += 1
+
+                f.write('\n')
+            if counter >= 50000:
+                break
+                #print([token.text for token in sentence.tokens])
+    counter = 0
+exit()
+"""
+        print(lit)
+        #print([sent.text for sent in doc.sentences])
+        for i, sentence in enumerate(doc.sentences):
+            print(*[f'id: {token.id}\ttext: {token.text}' for token in sentence.tokens], sep='\n')
+        #print([sentence.text for sentence in doc.sentences])
+        for i in doc.sentences:
+            print(i.text)
                 
     elif i.name == "misc.pkl":
         for j in texts:
@@ -174,6 +186,7 @@ for i in dev:
                     screen[word] = 1
                 else:
                     screen[word] += 1
+        """
 
 print('test')
 for i in test:
